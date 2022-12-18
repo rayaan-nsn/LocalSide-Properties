@@ -1,0 +1,73 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home - Property Finder</title>
+        <link rel="styleSheet" href="propertyFinder.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script
+            src="https://kit.fontawesome.com/10446019b7.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <nav>
+            <img
+                class="navLogo"
+                src="./images/logo-property-finder.svg"
+                style="height: 2vw"
+            />
+            <a class="activePage" href="home.html"> Home </a>
+            <a href="property.html"> Property </a>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </nav>
+
+        <header>
+            <img class="homeLogo" src="./images/logo-property-finder.svg" />
+        </header>
+
+        <a href="property.html"
+            ><button class="searchMeBtn">Search Property</button></a
+        >
+
+        <div class="homeContent">
+            <div class="homContainer">
+                <div class="homeColumn">
+                    <div id="slideshow">
+                        <div>
+                            <img class="w123" src="https://assets.codepen.io/9632/dog.jpg" />
+                        </div>
+                        <div>
+                            <img class="w123"
+                                src="https://assets.codepen.io/9632/plant.jpg"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="homeColumn">
+                    <h1>Image Slideshow 2</h1>
+                </div>
+                <div class="homeColumn">
+                    <h1>Image Slideshow 3</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(
+            function () {
+            $("#slideshow > div:first")
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo("#slideshow");
+        }, 3000);
+    </script>
+</html>
