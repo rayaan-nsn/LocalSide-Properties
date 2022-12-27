@@ -35,3 +35,25 @@ $(document).ready(function () {
         $("#tabs").slideToggle();
     });
 });
+
+
+$( function() {
+    $( ".adContainer" ).draggable();
+  } );
+
+  $(document).ready(function() {
+    $( ".adContainer" ).draggable();
+    $( ".column3" ).droppable({
+        drop: function( event, ui ) {
+            var name = ui.draggable.find("h2").html();
+            var price = ui.draggable.find("h3").html();
+            $( this ).html(name + " " + price)
+            .css("border", "1px solid #black")
+    .append("<button class='deleteButton'>Delete</button>");
+          }
+    });
+
+    $(".deleteButton").click(function() {
+      $(".column3").empty();
+    });
+  });
