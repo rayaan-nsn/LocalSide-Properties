@@ -2,23 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>${ad.title}</title>
+    <title>Result Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
 </head>
 <body>
 <!-- Define the template for each object in the array -->
-<script id="tempPropD" type="text/html">
-    <div class="objectPropD">
-        <h1>${title}</h1>
-<!--        <img src="${ad.image}" alt="${ad.title}">-->
-<!--        <p>${ad.description}</p>-->
-<!--        <p>${ad.extraDetails}</p>-->
+<script id="template" type="text/html">
+    <div class="adCard">
+        <h6>${propID}</h6>
+        <h2>${name}</h2>
+        <p>${description}</p>
     </div>
 </script>
 
-<h1>Full Detail Page</h1>
+<h1>Hei</h1>
 <!-- Define the container element where the objects will be added -->
-<div id="detailsContainer"></div>
+<div id="resultContainer"></div>
 
 
 </body>

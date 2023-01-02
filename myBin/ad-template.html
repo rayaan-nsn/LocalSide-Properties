@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>${ad.title}</title>
+</head>
+<body>
+<div id="ads">
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  const ads = [
+    {
+      "title": "Ad 1",
+      "image": "ad1.jpg",
+      "description": "Description for ad 1",
+      "extraDetails": "Extra details for ad 1"
+    },
+    {
+      "title": "Ad 2",
+      "image": "ad2.jpg",
+      "description": "Description for ad 2",
+      "extraDetails": "Extra details for ad 2"
+    },
+    {
+      "title": "Ad 3",
+      "image": "ad3.jpg",
+      "description": "Description for ad 3",
+      "extraDetails": "Extra details for ad 3"
+    }
+  ];
+
+  $.each(ads, function(index, ad) {
+    const $ad = $(`
+        <div class="ad">
+          <h2>${ad.title}</h2>
+          <img src="${ad.image}" alt="${ad.title}">
+          <a href="#">Learn more</a>
+        </div>
+      `);
+    $('#ads').append($ad);
+
+    $ad.find('a').click(function() {
+      $.get('ad-template.html', function(template) {
+        // Use the template to create an HTML string for the full ad
+        const adHTML = template
+                .replace(/\${ad.title}/g, ad.title)
+                .replace(/\${ad.image}/g, ad.image)
+                .replace(/\${ad.description}/g, ad.description)
+                .replace(/\${ad.extraDetails}/g, ad.extraDetails);
+
+        // Open a new window and write the full ad HTML to it
+        window.open().document.write(adHTML);
+      });
+    });
+  });
+</script>
+</body>
+</html>

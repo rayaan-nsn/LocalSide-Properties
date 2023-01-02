@@ -71,6 +71,13 @@ header {
     height: 18vw;
 }
 
+/* .sad{
+    position: absolute;
+    z-index: 99;
+    top: 18vw;
+    left: au;
+} */
+
 .homeSlideImages {
     width: 27vw;
     height: 18vw;
