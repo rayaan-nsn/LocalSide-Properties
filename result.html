@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="row">
@@ -15,9 +16,14 @@
         <!-- Define the container element where the objects will be added -->
         <div id="filtered-properties-container"></div>
     </div>
-    <div id="droppable" class="column" style="background-color:#bbb; width: 20%; height: 500px;">
+    <div id="droppable remove-area"  class="column" style="background-color:#bbb; width: 20%; height: 500px;">
         <h2>Column 2</h2>
-        <p></p>
+        <div id="drpToMe" style="height: 400px; background-color: #fac710;">
+            <p></p>
+            <div id="droppedList"></div>
+        </div>
+        <button id="clear-button">Clear</button>
+
     </div>
 </div>
 

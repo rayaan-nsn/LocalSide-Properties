@@ -10,6 +10,11 @@
     border-radius: 10px;
 }
 
+.favItemBox{
+    display: flex;
+    border: 1px solid black;
+}
+
 .propMainImg{
     margin: 10px 25px 10px 10px;
     height: 200px;
@@ -55,4 +60,13 @@
     opacity: 1;
 }
 /*Gallery Slideshow begins*/
+
+iframe{
+    width: 600px;
+    height: 450px;
+    border:0;
+    allowfullscreen:"";
+    loading:lazy;
+    referrerpolicy: no-referrer-when-downgrade;
+}
 

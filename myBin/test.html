@@ -1,41 +1,41 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Droppable - Default functionality</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>
-        /*#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }*/
-        /*#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }*/
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#draggable" ).draggable();
-            $( "#droppable" ).droppable({
-                drop: function( event, ui ) {
-                    $( this )
-                        .addClass( "ui-state-highlight" )
-                        .find( "p" )
-                        .html( "Dropped!" );
-                }
-            });
-        } );
-    </script>
-</head>
-<body>
-
-<div id="draggable">
-    <p>Drag me to my target</p>
+<!-- HTML for draggable element -->
+<div id="draggable-item" >
+    <p>Drag me to the cart</p>
 </div>
 
-<div id="droppable">
-    <p>Drop here</p>
+<!-- HTML for droppable element -->
+<div id="cart">
+    <p>Drop area</p>
 </div>
 
+<!-- Include the jQuery and jQuery UI libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-</body>
-</html>
+<!-- Make the element draggable -->
+<script>
+    $( "#draggable-item" ).draggable();
+</script>
+
+<!-- Make the element droppable and specify a function to run when an element is dropped -->
+<script>
+    $( "#cart" ).droppable({
+        drop: function( event, ui ) {
+            alert( "Item was added to the cart!" );
+        }
+    });
+</script>
+
+<style>
+    /* Style the draggable and droppable elements */
+    #draggable-item {
+        width: 100px;
+        height: 100px;
+        padding: 0.5em;
+    }
+    #cart {
+        width: 200px;
+        height: 200px;
+        padding: 1em;
+    }
+</style>
