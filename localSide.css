@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+}
+
+.propAdBox{
+    display: flex; /* Image & text side by side */
+    background-color: #ef5f4f;
+    margin: 15px;
+    width: 70%;
+    border-radius: 10px;
+}
+
+.propMainImg{
+    margin: 10px 25px 10px 10px;
+    height: 200px;
+}
+
+/*Gallery Slideshow begins*/
+.propImageContainer{
+    width: 50%;
+    margin-left: 100px;
+}
+
+.propLargeImage{
+    width: 100%;
+}
+
+.propSmallImage {   /* Six columns side by side */
+    float: left;
+    width: 16.66%;
+}
+.column{
+    float: left;
+}
+.propSmallImageRow {
+    width: 100%;
+    position: relative;
+
+}
+#propInfoTabs {
+    float: left;
+    margin-top: 200px;
+    width: 100%;
+    position: absolute;
+}
+
+
+.propImageSelector { /* Add a transparency effect for thumbnail images */
+    opacity: 0.6;
+    width: 100%;
+}
+
+.active,
+.propImageSelector:hover {
+    opacity: 1;
+}
+/*Gallery Slideshow begins*/
+

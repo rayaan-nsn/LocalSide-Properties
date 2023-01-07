@@ -1,71 +1,41 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Listings</title>
-    <!-- Add some basic styling to the listing elements -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Droppable - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        /*#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }*/
+        /*#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }*/
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#draggable" ).draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" )
+                        .find( "p" )
+                        .html( "Dropped!" );
+                }
+            });
+        } );
+    </script>
 </head>
 <body>
-<!-- Create an empty element to hold the listing elements -->
-<div id="listing-container"></div>
-<!-- Include jQuery library -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    // Define an array of objects, each representing a listing
-    const listings = [
-        {
-            "title": "Listing 1",
-            "image": "listing1.jpg",
-            "description": "Description for listing 1",
-            "extraInfo": "Extra details for listing 1"
-        },
-        {
-            "title": "Listing 2",
-            "image": "listing2.jpg",
-            "description": "Description for listing 2",
-            "extraInfo": "Extra details for listing 2"
-        },
-        {
-            "title": "Listing 3",
-            "image": "listing3.jpg",
-            "description": "Description for listing 3",
-            "extraInfo": "Extra details for listing 3"
-        }
-    ];
 
-    // Use jQuery to loop through the array of listings
-    $.each(listings, function(index, listingOP) {
-        // Create a listing element using template literals and the current listing object
-        const $listing123 = $(`
-    <div class="listing">
-      <h2>${listingOP.title}</h2>
-      <img src="${listingOP.image}" alt="${listingOP.title}">
-    </div>
-  `);
-        // Append the listing element to the page
-        $('#listing-container').append($listing123);
+<div id="draggable">
+    <p>Drag me to my target</p>
+</div>
 
-        // Add a click event to the entire div element with the class "listing"
-        $listing123.click(function() {
-            // Create an HTML string for the full listing using template literals and the current listing object
-            const listingHTML = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>${listingOP.title}</title>
-      </head>
-      <body>
-        <h1>${listingOP.title}</h1>
-        <img src="${listingOP.image}" alt="${listingOP.title}">
-        <p>${listingOP.description}</p>
-        <p>${listingOP.extraInfo}</p>
-      </body>
-      </html>
-    `;
-            // Open a new window and write the full listing HTML to it
-            window.open().document.write(listingHTML);
-        });
-    });
+<div id="droppable">
+    <p>Drop here</p>
+</div>
 
-</script>
+
 </body>
 </html>

@@ -1,0 +1,44 @@
+houses :
+
+prop1
+https://www.rightmove.co.uk/properties/85857954#/?channel=RES_BUY
+
+prop2
+https://www.rightmove.co.uk/properties/129315881#/?channel=RES_BUY
+
+prop3
+https://www.rightmove.co.uk/properties/125652572#/?channel=RES_BUY
+
+prop4
+https://www.rightmove.co.uk/properties/129008039#/?channel=RES_BUY
+
+
+Apartments / Flat :
+
+prop5
+https://www.rightmove.co.uk/properties/126646838#/?channel=RES_BUY
+
+prop6
+https://www.rightmove.co.uk/properties/126802958#/?channel=RES_BUY
+
+prop7
+https://www.rightmove.co.uk/properties/127135595#/?channel=RES_BUY
+
+
+                  <h1>${property.title}</h1>
+                  <div class="container">
+                        <div class="mySlides"><img src="${property.picture1}" style="width:100%" alt=""></div>
+                        <div class="mySlides"><img src="${property.picture2}" style="width:100%" alt=""></div>
+                        <div class="mySlides"><img src="${property.picture3}" style="width:100%" alt=""></div>
+                        <div class="mySlides"><img src="${property.picture4}" style="width:100%" alt=""></div>
+                        <div class="mySlides"><img src="${property.picture5}" style="width:100%" alt=""></div>
+                        <div class="mySlides"><img src="${property.picture6}" style="width:100%" alt=""></div>
+                        <div class="row">
+                            <div class="column"><img class="demo" src="${property.picture1}" onclick="currentSlide(1)" alt=""></div>
+                            <div class="column"><img class="demo" src="${property.picture2}" onclick="currentSlide(2)" alt=""></div>
+                            <div class="column"><img class="demo" src="${property.picture3}" onclick="currentSlide(3)" alt=""></div>
+                            <div class="column"><img class="demo" src="${property.picture4}" onclick="currentSlide(4)" alt=""></div>
+                            <div class="column"><img class="demo" src="${property.picture5}" onclick="currentSlide(5)" alt=""></div>
+                            <div class="column"><img class="demo" src="${property.picture6}" onclick="currentSlide(6)" alt=""></div>
+                        </div>
+                    </div>

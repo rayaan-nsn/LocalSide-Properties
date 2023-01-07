@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>${ad.title}</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
+    <title>Property</title>
 </head>
+<link rel="stylesheet" href="localSide.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <body>
-<!-- Define the template for each object in the array -->
-<script id="tempPropD" type="text/html">
-    <div class="objectPropD">
-        <h1>${title}</h1>
-<!--        <img src="${ad.image}" alt="${ad.title}">-->
-<!--        <p>${ad.description}</p>-->
-<!--        <p>${ad.extraDetails}</p>-->
+<div class="propImageContainer">
+    <div class="propLargeImage propImg1"></div>
+    <div class="propLargeImage propImg2"></div>
+    <div class="propLargeImage propImg3"></div>
+    <div class="propLargeImage propImg4"></div>
+    <div class="propLargeImage propImg5"></div>
+    <div class="propLargeImage propImg6"></div>
+    <div class="propSmallImageRow">
+        <div class="propSmallImage propPic1"></div>
+        <div class="propSmallImage propPic2"></div>
+        <div class="propSmallImage propPic3"></div>
+        <div class="propSmallImage propPic4"></div>
+        <div class="propSmallImage propPic5"></div>
+        <div class="propSmallImage propPic6"></div>
     </div>
-</script>
+</div>
 
-<h1>Full Detail Page</h1>
-<!-- Define the container element where the objects will be added -->
-<div id="detailsContainer"></div>
-
+<div id="propInfoTabs">
+    <ul>
+        <li><a href="#detailsTab">Details</a></li>
+        <li><a href="#floorPlanTab">Floor Plan</a></li>
+        <li><a href="#locationMapTab">Maps</a></li>
+    </ul>
+    <div id="detailsTab">
+        <P class="propDetails"></P>
+    </div>
+    <div id="floorPlanTab">
+        <div class="propFloorPlan"></div>
+    </div>
+    <div id="locationMapTab">
+        <p>wtsp</p>
+        <div class="propLocation"></div>
+    </div>
+</div>
 
 </body>
 <script src="localSide.js"></script>

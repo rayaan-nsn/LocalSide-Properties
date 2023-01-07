@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Result Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
+    <link rel="stylesheet" href="localSide.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 <body>
-<!-- Define the template for each object in the array -->
-<script id="template" type="text/html">
-    <div class="adCard">
-        <h6>${propID}</h6>
-        <h2>${name}</h2>
-        <p>${description}</p>
+<div class="row">
+    <div class="column" style="background-color:#aaa; width: 75%;">
+        <!-- Define the container element where the objects will be added -->
+        <div id="filtered-properties-container"></div>
     </div>
-</script>
+    <div id="droppable" class="column" style="background-color:#bbb; width: 20%; height: 500px;">
+        <h2>Column 2</h2>
+        <p></p>
+    </div>
+</div>
 
-<h1>Hei</h1>
-<!-- Define the container element where the objects will be added -->
-<div id="resultContainer"></div>
 
 
 </body>
