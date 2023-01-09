@@ -44,3 +44,163 @@ https://www.rightmove.co.uk/properties/127135595#/?channel=RES_BUY
                     </div>
 
 
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital@1&display=swap');
+*{
+    margin: 0;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+}
+
+
+/*Sidenav begins*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+/*Sidenav ends*/
+
+
+
+.propAdBox{
+    display: flex; /* Image & text side by side */
+    background-color: #ef5f4f;
+    margin: 2.5%;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.ad-content > h1{
+    margin-top: 20px;
+    font-size: x-large;
+}
+
+.ad-content > h2{
+    font-size: medium;
+
+}
+
+
+.favItemBox{
+    display: flex;
+    border: 1px solid black;
+}
+
+.propMainImg{
+    margin: 10px 25px 10px 10px;
+    height: 200px;
+}
+
+/*Gallery Slideshow begins*/
+.propImageContainer{
+    width: 50%;
+    margin-left: 100px;
+}
+
+.propLargeImage{
+    width: 100%;
+}
+
+.propSmallImage {   /* Six columns side by side */
+    float: left;
+    width: 16.66%;
+}
+.column1{
+    float: left;
+    background-color:#aaa;
+    width: 70%;
+    height: 650px;
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto;*/
+    margin: 1.5%;
+    border-radius: 10px;
+}
+
+.column1>h2{
+    position: fixed;
+}
+
+.column2{
+    float: left;
+    background-color:#bbb;
+    width: 24%;
+    height: 650px;
+    margin: 1.5%;
+    border-radius: 10px;
+
+}
+
+#filtered-properties-container{
+
+}
+
+.propSmallImageRow {
+    width: 100%;
+    position: relative;
+
+}
+#propInfoTabs {
+    float: left;
+    margin-top: 200px;
+    width: 100%;
+    position: absolute;
+}
+
+
+.propImageSelector { /* Add a transparency effect for thumbnail images */
+    opacity: 0.6;
+    width: 100%;
+}
+
+.active,
+.propImageSelector:hover {
+    opacity: 1;
+}
+/*Gallery Slideshow begins*/
+
+iframe{
+    width: 600px;
+    height: 450px;
+    border:0;
+    allowfullscreen:"";
+    loading:lazy;
+    referrerpolicy: no-referrer-when-downgrade;
+}
+

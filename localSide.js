@@ -210,6 +210,15 @@ var propertyData = {
 
 
 /* <<<--------------------------- Search Page --------------------------->>> */
+function openNav() {
+    $("#mySidenav").css("width", "250px");
+}
+
+function closeNav() {
+    $("#mySidenav").css("width", "0");
+}
+
+
 $(document).ready(function () {  //Onclick submit button
     $('#submitBtn').click(searchProp);
 });
@@ -236,6 +245,7 @@ function searchProp() {
             // If the element meets the search criteria, add it to the filteredList array
             filteredList.push(property);
             console.log(filteredList);
+
         }
     });
     const stringifiesFilteredList = JSON.stringify(filteredList); //Only strings can be stored in localstorage
@@ -267,21 +277,14 @@ $.each(filteredListBack, function (index, property) {    // Loop through the arr
   `);
     $('#filtered-properties-container').append($propertyAd);    // Append the property ad element to the page
 
-    $propertyAd.click(function () {
+    $propertyAd.find('.seeMore').click(function () {
         const stringifiesObject = JSON.stringify(property); //Only strings can be stored in localstorage
         localStorage.setItem('property', stringifiesObject);    //storing the stringifies objects into the localstorage
         window.open('property.html');
     });
 });
 
-const droppedItems = [];
-
-// const index = propertyData.property.findIndex(
-//     (element) => element.id === "prop2"
-// );
-
-
-const favouriteList = []; // Declare an empty array to store favourite items
+let favouriteList = []; // Declare an empty array to store favourite items
 
 $(function () {
     $('.drag').draggable({ // Make elements with class "drag" draggable
@@ -313,12 +316,15 @@ $(function () {
         // Create a new element to be appended to the element with id "droppedList"
         const $favAdded = $(`
     <div class="favItemBox">
+    <div>
       <h5 class="dragFavRemove">${favProperty.title}</h5>
-      <h6>${favProperty.price}</h6>
-      <i class="fas fa-times delete-icon"></i>
+      <h4>£ ${favProperty.price}</h4>
+      </div>
+      <i class="fas fa-times delete-icon fa-xl"></i>
     </div>
   `);
         $('#droppedList').append($favAdded); // Append the newly created element to the element with id "droppedList"
+        // $('#favorites-list').append($favAdded); // Append the newly created element to the element with id "favorites-list"
     }
 
     // <<<------------ Delete by icon begins ------------>>>
@@ -338,10 +344,6 @@ $(function () {
     }
     // <<<------------ Delete by icon ends ------------>>>
 
-    $('.favItemBox').draggable({
-    });
-
-
     $('#clear-button').click(function() {
         clearFavourites();
     });
@@ -351,28 +353,37 @@ $(function () {
         $('#droppedList').empty(); // Remove all elements from the element with id "droppedList"
     }
 
+    // Add a click listener to the element with the id "droppedList"
+    $('#droppedList').on('click', '.favItemBox', function() {
+        $(this).draggable({ // Make the clicked element draggable
+            revert: true // When the draggable element is dropped, it will return to its original position
+        });
+    });
+
+    $('#filtered-properties-container').droppable({
+        drop: function(event, ui) {
+            const propertyTitle = ui.draggable.find('h5').text();
+            const clickedElement = ui.helper.clone().replaceAll(ui.draggable);
+            removePropertyFromFavourites(propertyTitle, clickedElement);
+        }
+    });
+
+
+    //<<<----------- Save favourite to the properties and read it back ----------->>>
+
+// Retrieve the favouriteList array from local storage when the page is loaded
+    let favouriteList = JSON.parse(localStorage.getItem("favouriteList")) || [];
+
+// Iterate over the elements in the array and add them to the list
+    favouriteList.forEach(addPropertyToList);
+
+// Save the favouriteList array to local storage when the page is unloaded
+    window.addEventListener("beforeunload", function(event) {
+        localStorage.setItem("favouriteList", JSON.stringify(favouriteList));
+    });
 
 
 });
-
-
-
-
-// $("#drpToMe").droppable({
-//     drop: function (event, ui) {
-//         const content = ui.draggable.text();
-//         const index = propertyData.property.findIndex( (element) => element.title === content);
-//         droppedItems.push(propertyData[index])
-//         $(this).addClass("ui-state-highlight");
-//         const $favAdded = $(`
-//                     <div class="favItemBox">
-//                         <h3>${propertyData[index].title}</h3>
-//                         <h5>${propertyData[index].price}</h5>
-//                     </div>
-//                 `);
-//         $('#droppedList').append($favAdded);
-//     }
-// });
 
 
 

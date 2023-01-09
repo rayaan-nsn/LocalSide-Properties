@@ -5,48 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
+    <link rel="stylesheet" href="localSide.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
 </head>
 <body>
 <div id="placeholder"></div>
 
-      <form id="form">
-        <fieldset>
-            <legend>Property Options</legend>
-            <label for="propertyType">Property Type</label><br />
-            <select name="propertyType" id="propertyType">
-                <option selected="selected">Any</option>
-                <option>House</option>
-                <option>Apartment</option></select
-            ><br><br>
-            <label for="minPrice">Minimum Price:</label>
-            <input type="number" id="minPrice" name="minPrice" value="0">
-            <br><br>
-            <label for="maxPrice">Maximum Price:</label>
-            <input type="number" id="maxPrice" name="maxPrice" value="10000000000">
-            <br><br>
-            <label for="minBedrooms">Minimum Bedrooms:</label>
-            <input type="number" id="minBedrooms" name="minBedrooms" value="1">
-            <br><br>
-            <label for="maxBedrooms">Maximum Bedrooms:</label>
-            <input type="number" id="maxBedrooms" name="maxBedrooms" value="5">
-            <br><br>
-            <label for="dateAdded">Date Added</label><br />
-            <select name="dateAdded" id="dateAdded">
+<!--<div id="mySidenav" class="sidenav">-->
+<!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+<!--    <a href="#">About</a>-->
+<!--    <a href="#">Services</a>-->
+<!--    <a href="#">Clients</a>-->
+<!--    <a href="#">Contact</a>-->
+<!--    <div id="favorites-list"></div>-->
+<!--</div>-->
 
-                <option selected="selected">Any</option>
-                <option>Today</option>
-                <option>Last 3 Days</option>
-                <option>This Week</option>
-                <option>This Month</option>
-                <option>This Year</option>
-            </select>
-            <br><br>
-            <label for="postCode">Postal Code</label>
-            <input type="text" id="postCode" name="postCode" value="NW1">
-        </fieldset>
-        <input type="submit" id="submitBtn" value="Search"/>
-    </form>
+<!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
+<div class="row">
+    <div class="column1">
+        <form id="form">
+            <fieldset>
+                <legend>Property Options</legend>
+                <label for="propertyType">Property Type</label><br />
+                <select name="propertyType" id="propertyType">
+                    <option selected="selected">Any</option>
+                    <option>House</option>
+                    <option>Apartment</option></select
+                ><br><br>
+                <label for="minPrice">Minimum Price:</label>
+                <input type="number" id="minPrice" name="minPrice" value="0">
+                <br><br>
+                <label for="maxPrice">Maximum Price:</label>
+                <input type="number" id="maxPrice" name="maxPrice" value="10000000000">
+                <br><br>
+                <label for="minBedrooms">Minimum Bedrooms:</label>
+                <input type="number" id="minBedrooms" name="minBedrooms" value="1">
+                <br><br>
+                <label for="maxBedrooms">Maximum Bedrooms:</label>
+                <input type="number" id="maxBedrooms" name="maxBedrooms" value="5">
+                <br><br>
+                <label for="dateAdded">Date Added</label><br />
+                <select name="dateAdded" id="dateAdded">
+
+                    <option selected="selected">Any</option>
+                    <option>Today</option>
+                    <option>Last 3 Days</option>
+                    <option>This Week</option>
+                    <option>This Month</option>
+                    <option>This Year</option>
+                </select>
+                <br><br>
+                <label for="postCode">Postal Code</label>
+                <input type="text" id="postCode" name="postCode" value="NW1">
+            </fieldset>
+            <input type="submit" id="submitBtn" value="Search"/>
+        </form>
+    </div>
+    <div class="column2">
+        <h2>Column 2</h2>
+        <p>Some text..</p>
+        <div id="favlist"></div>
+    </div>
+</div>
+
       
 </body>
 <script src="localSide.js"></script>
