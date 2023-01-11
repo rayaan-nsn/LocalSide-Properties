@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+    <link rel="stylesheet" href="localSide.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="topnav" style="display: flex; justify-content: space-between">
+    <div>
+    <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+    <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+    <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+    <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
+    </div>
+    <a class="active" href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
+
+</nav>
+<div class="row">
+    <div class="column1">
+        <div id="fav-page-content"></div>
+    </div>
+    <div id="droppable remove-area"  class="column2">
+        <h2>FAVOURITES</h2>
+        <div id="favourite-items-container">
+            <p></p>
+            <div id="favourite-items"></div>
+        </div>
+        <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
+    </div>
+</div>
+
+
+
+</body>
+<script src="localSide.js"></script>
+</html>

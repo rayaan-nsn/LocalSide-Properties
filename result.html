@@ -11,18 +11,26 @@
     <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+<nav class="topnav" style="display: flex; justify-content: space-between">
+    <div>
+    <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+    <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+    <a class="active" href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+    <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
+    </div>
+    <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
+</nav>
 <div class="row">
     <div class="column1">
-        <h2>Properties</h2>
+        <h2></h2>
         <!-- Define the container element where the objects will be added -->
         <div id="filtered-properties-container"></div>
     </div>
     <div id="droppable remove-area"  class="column2">
-        <h2>Column 2</h2>
-        <div id="drpToMe" style="height: 400px; background-color: #fac710;">
+        <h2>FAVOURITES</h2>
+        <div id="favourite-items-container">
             <p></p>
-            <div id="droppedList"></div>
+            <div id="favourite-items"></div>
         </div>
         <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
     </div>

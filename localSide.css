@@ -2,68 +2,125 @@
 *{
     margin: 0;
     font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    /*background-image: url("the-London-Eye-Coloring-Page.webp");*/
+    /*background-size: cover;*/
 }
 
-
-/*Sidenav begins*/
-.sidenav {
-    height: 100%;
-    width: 0;
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    width: 100%;
+    z-index: 1; /* This will bring the navbar to the front */
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.search-row1, .search-row2, .search-row1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui-spinner {
+    width: 255px;
+}
+
+.ui-menu {
+    width: 255px;
+}
+
+fieldset > h1{
+    /*display: block;*/
+    text-align: center;
+}
+
+#submitBtn{
     display: block;
-    transition: 0.3s;
+    margin: auto;
+    width: 200px;
+    height: 50px;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
 
-.sidenav .closebtn {
+.homeBox{
+    background-color: #333;
+    display: block;
+    margin: auto;
+    height: 30%;
+    width: 40%;
+    text-align: center;
+    border-radius: 5px;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    z-index: 99;
+    top: 220px;
+    right: 30%;
+    /*transform: translateX(-50%);*/
+    /*z-index: -1;*/
 }
 
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
+.homeBox > h1{
+    font-size: xx-large;
+    color: #04AA6D;
+    padding: 20px 20px 10px;
 }
-/*Sidenav ends*/
+
+.homeBox > h5{
+    font-size: medium;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.homeBox > button{
+    width: 50%;
+    height: 20%;
+}
 
 
 
 .propAdBox{
     display: flex; /* Image & text side by side */
-    background-color: #ef5f4f;
-    margin: 2.5%;
+    background-color: white;
+    /*display: block;*/
+    margin: 20px auto auto;
+    /*border: 2px solid #333;*/
     width: 95%;
-    border-radius: 10px;
+    box-shadow: 5px 10px 18px #b4b4b4;
+    /*border-radius: 10px;*/
 }
 
 .ad-content > h2{
     margin-top: 20px;
     font-size: x-large;
+}
+
+.propMainImg {
+    margin: 10px 25px 10px 10px;
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
 }
 
 /*.ad-content > h2{*/
@@ -72,14 +129,16 @@
 /*}*/
 
 .favourite-button{
-    background-color: white;
     border: none;
     height: 30px;
     width: 150px;
-    border-radius: 5px;
+    border-radius: 0;
+    background-color: #04AA6D;
+
 }
 
 .favItemBox{
+    /*position: absolute;*/
     margin: 10px;
     height: 50px;
     display: flex;
@@ -90,6 +149,7 @@
 .dragFavRemove{
     width: 100%;
 }
+
 
 .delete-icon{
     margin-top: 25px;
@@ -102,68 +162,98 @@
     margin: auto;
     height: 35px;
     width: 120px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
 }
 
-.propMainImg{
-    margin: 10px 25px 10px 10px;
-    height: 200px;
-}
 
-/*Gallery Slideshow begins*/
-.propImageContainer{
-    width: 50%;
-    margin-left: 100px;
-}
 
-.propLargeImage{
-    width: 100%;
-}
-
-.propSmallImage {   /* Six columns side by side */
-    float: left;
-    width: 16.66%;
-}
 .column1{
     float: left;
-    background-color:#aaa;
+    /*background-color:#aaa;*/
     width: 70%;
-    height: 650px;
+    padding-bottom: 20px;
+
+    /*height: 650px;*/
     /*overflow-x: hidden;*/
     /*overflow-y: auto;*/
-    margin: 1.5%;
+    margin: 70px 1.5% 1.5%;
     border-radius: 10px;
+
 }
 
 .column1>h2{
     position: fixed;
 }
 
-.column2{
-    float: left;
-    background-color:#bbb;
+.column2 > h2{
+    padding-bottom: 5px;
+    font-size: medium;
+    /*display: block;*/
+    /*margin: auto;*/
+    background-color: #04AA6D;
+}
+
+.column2 {
+    /*background-color: #bbb;*/
     width: 24%;
-    height: 650px;
+    height: 570px;
     margin: 1.5%;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
+    border: 3px solid #04AA6D;;
+    /*box-shadow: 5px 10px 18px #b4b4b4;*/
+    position: fixed;
+    right: 0;
+    top: 70px;
+    z-index: -1;
+    text-align: center;
 
 }
+
+#favourite-items-container {
+    height: 450px;
+    /*background-color: #fac710;*/
+}
+
+/*#droppable > h2{*/
+/*    display: block;*/
+/*    margin: auto;*/
+/*}*/
+
 
 #filtered-properties-container{
 
 }
 
+
+/*Property Page*/
+.property-top-details{
+    display: flex;
+    padding-top: 60px;
+}
+
+.propImageContainer{
+    width: 50%;
+    padding: 30px 0 10px 30px;
+    /*background-color: #818181;*/
+}
+
+.property-image{
+    width: 95%;
+}
+
+.propSmallImage {   /* Six columns side by side */
+    float: left;
+    width: 16.66%;
+}
+
 .propSmallImageRow {
-    width: 100%;
+    width: 95%;
     position: relative;
 
 }
-#propInfoTabs {
-    float: left;
-    margin-top: 200px;
-    width: 100%;
-    position: absolute;
-}
-
 
 .propImageSelector { /* Add a transparency effect for thumbnail images */
     opacity: 0.6;
@@ -176,9 +266,121 @@
 }
 /*Gallery Slideshow begins*/
 
+
+
+#property-details-container{
+    width: 60%;
+    /*background-color: yellow;*/
+    padding: 2% 2% 2% 0;
+
+}
+
+.typeNTenure-container{
+    /*background-color: #ef5f4f;*/
+    margin-top: 15px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px 10px 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.price-fullPage{
+    margin: 15px 15px 15px 5px;
+}
+
+.price-n-btn{
+    width: 95%;
+    /*background-color: green;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-favourite{
+    height: 40px;
+    width: 150px;
+    display: block;
+    margin: auto 30px auto auto;
+}
+
+#propInfoTabs {
+    width: 50%;
+    height: 50%;
+    float: left;
+    position: absolute;
+    border: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*background-color: #818181;*/
+    padding: 0;
+}
+
+ul{
+position: fixed;
+    width: 48%;
+}
+
+#detailsTab{
+    margin-top: 40px;
+}
+
+#floorPlanTab{
+    margin-top: 40px;
+}
+
+#locationMapTab{
+    margin-top: 40px;
+}
+
+
+
+/*ul {*/
+/*    background-color: red;*/
+/*    text-decoration: none;*/
+/*    height: 35px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+
+/*}*/
+
+/*a{*/
+/*    text-decoration: none;*/
+
+/*}*/
+
+/*li{*/
+/*    margin: 40px;*/
+/*    background-color: blue;*/
+/*}*/
+
+/*.ui-tabs .ui-tabs-nav{*/
+/*    display: flex; !important;*/
+/*    justify-content: space-between; !important;*/
+/*    padding: 0; !important;*/
+/*}*/
+
+/*li > a {*/
+/*    margin-left: 50px; !important;*/
+/*}*/
+
+
+
+/*.ui-widget-header {*/
+/*    border: 1px solid green; !important;*/
+/*    background: #e9e9e9;*/
+/*    color: #333333;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*li{*/
+/*    width: 50%; !important;*/
+/*}*/
+
+
 iframe{
-    width: 600px;
-    height: 450px;
+    width: 96%;
+    height: 250px;
     border:0;
     allowfullscreen:"";
     loading:lazy;
