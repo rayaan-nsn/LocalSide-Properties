@@ -8,7 +8,7 @@ var propertyData = {
             "postcode": "NW1",
             "price": 17000000,
             "tenure": "Freehold",
-            "shortDescription": "This 1860s villa in St John's Wood, London has a large entertaining space, principal suite with en suite bathroom, and four additional bedrooms. It also has a secluded garden with swimming pool and pool house, off-street parking, and the potential for extension. Located near St John's Wood High Street and underground station.",
+            "shortDescription": "This 1860s villa in St John's Wood, London has a large entertaining space, principal suite with en suite bathroom, and four additional bedrooms. It also has a secluded garden with swimming pool and pool house, off-street parking, and the potential for extension. Located near St John's Wood High Street and underground station",
             "description": "A lateral stucco detached villa built circa 1860 (not listed), set behind a walled and gated entrance, with a secluded 113 ft rear garden, off street parking quietly located on the East side of St John's Wood adjacent to Norfolk Road. This low built house, laid out mainly across two floors, is not listed and provides an opportunity to extend (subject to appropriate planning consents).\n" + "\n" +
                 "The house extends to approximately 4805 sq ft featuring a large entertaining space with a drawing room, second reception room, dining room and kitchen/breakfast room. The ground floor also provides a guest cloakroom/WC, storage and boot room/utility.\n" + "\n" +
                 "The principal suite is located on the first floor with a dressing room, en suite bathroom and access to a roof terrace overlooking the gardens (also with the opportunity to extend subject to the appropriate planning consents). There are four further bedrooms and three bath/shower rooms (two en suite).\n" + "\n" +
@@ -26,7 +26,7 @@ var propertyData = {
             "floorPlan": "./images/prop1/prop1FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/85857954#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 9,
                 "day": 14,
                 "year": 2021
             }
@@ -39,6 +39,7 @@ var propertyData = {
             "postcode": "NW1",
             "price": 15000000,
             "tenure": "Freehold",
+            "shortDescription" : "Substantial 1830s detached house in affluent St. John's Wood, with planning permission for 12,500 sq ft single family residence with extensive leisure and pool. Close to transport, near St. John's Wood and Maida Vale Underground Stations and easy access to amenities and prime locations in London. Complete architect pack available on request",
             "description": "A substantial double fronted detached house, built in circa 1830, currently arranged as six apartments, with off street parking and a 150 ft West facing garden. The property has planning permission to create a sensational single family residence of circa 12,500 square feet with extensive leisure and a swimming pool.\n" + "\n" +
                 "Complete architect pack available on request\n" + "\n" + "Hamilton Terrace is located on the West side of St. John's Wood, an area renowned as one of the most affluent parts of London, being characterised by prime residential properties, boutique shops and restaurants. Hamilton Terrace is one of the highest value roads in St. John's Wood. The house is 450 metres to the southwest of St John's Wood Underground Station, which provides Jubilee line services to the West End, Bond Street (5 minutes), London Bridge (14 minutes), and Canary Wharf (20 minutes).\n" + "\n" +
                 "Maida Vale Underground Station (Bakerloo line) is less than 500 metres away. The area is also served by a number of bus routes that run along Wellington Road (A41) and Maida Vale (A5). The excellent amenities of Marylebone, Mayfair and the West End are also easily accessible by road, tube or bus. All distances and times are approximate.",
@@ -54,7 +55,7 @@ var propertyData = {
             "floorPlan": "./images/prop2/prop2FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/129315881#/?channel=RES_BUY",
             "added": {
-                "month": "November",
+                "month": 11,
                 "day": 22,
                 "year": 2022
             }
@@ -62,11 +63,12 @@ var propertyData = {
         {
             "id": "prop3",
             "type": "Condo",
-            "title": "Ingram Avenue, Hampstead Garden Suburb, London, NW11",
+            "title": "Ingram Avenue, Hampstead Garden, London, NW11",
             "bedrooms": 9,
             "postcode": "NW1",
             "price": 12500000,
             "tenure": "Freehold",
+            "shortDescription":"Exceptional Grade II Listed Lutyens residence on double width plot in Turner's Wood Bird Sanctuary. Built by leading British architect Sir Edwin Lutyens and rebuilt in 2006 to modern standards while maintaining original layout. Principal rooms face extensive gardens and offer high ceilings and excellent flow for family living",
             "description": "An exceptional Grade II Listed Lutyens residence (1,040 sq m/11,197 sq ft) occupying a magnificent double width plot backing directly onto unspoilt acres of Turner’s Wood Bird Sanctuary.\n" + "\n" +
                 "The inspiration for Fairwood House came from Sir Edwin Lanseer Lutyens, the 20th century’s leading British architect. Lutyens was commissioned to design many of the great English country houses as well as being appointed by the\n" +
                 "Government to design and build Viceroy House in Delhi, which has since become the residence of the president of India.\n" + "\n" +
@@ -84,7 +86,7 @@ var propertyData = {
             "floorPlan": "./images/prop3/prop3FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/125652572#/?channel=RES_BUY",
             "added": {
-                "month": "August",
+                "month": 4,
                 "day": 3,
                 "year": 2022
             }
@@ -94,9 +96,10 @@ var propertyData = {
             "type": "House",
             "title": "North End Avenue, Hampstead, London, NW3",
             "bedrooms": 5,
-            "postcode": "NW1",
+            "postcode": "NW8",
             "price": 8450000,
             "tenure": "Freehold",
+            "shortDescription" : "A substantial semi-detached period house abutting Hampstead Heath with driveway and large landscaped gardens, gym/bedroom, 6 bedrooms and 3 bathrooms, ideal location between Hampstead Village and Golders Green with excellent shopping and transport facilities",
             "description": "A substantial semi-detached period house, approached via a sweeping gated driveway, set in one of the most idyllic locations abutting Hampstead Heath and a short distance from Golders Hill Park, located between Hampstead Village and Golders Green, both of which offer excellent shopping and transport facilities.\n" + "\n" +
                 "On the ground floor there is an impressive entrance hall with guest cloakroom, leading through to a stunning reception hall, and a split-level dining room which opens onto a substantial kitchen/breakfast room.\n" + "\n" +
                 "A wonderful staircase leads up to the first floor to an elegant double aspect drawing room opening on to a light filled conservatory with direct access on to the garden and wonderful Heath views. In addition, there is a gym/bedroom, utility room and second cloakroom on this floor.\n" + "\n" +
@@ -115,9 +118,9 @@ var propertyData = {
             "floorPlan": "./images/prop4/prop4FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/129008039#/?channel=RES_BUY",
             "added": {
-                "month": "November",
+                "month": 4,
                 "day": 11,
-                "year": 2022
+                "year": 2021
             }
         },
         {
@@ -128,6 +131,7 @@ var propertyData = {
             "postcode": "NW1",
             "price": 8250000,
             "tenure": "Leasehold",
+            "shortDescription" : "Brand newly refurbished and interior designed lateral apartment in Regent's Park with 7 floor-to-ceiling windows, terracing, and views of the park. Features high ceilings, triple aspect, natural light, 3 bedrooms, 2 bathrooms, dressing room, underfloor heating, and private gardens. Secure development with 24-hour porterage and CCTV",
             "description": "This rarely available, lateral apartment has just been brand newly refurbished and interior designed with impeccable taste, very much in line with the character of Regent’s Park.\n" + "\n" +
                 "Offering fantastic ceiling heights and seven, floor to ceiling windows, plus terracing across the front of the apartment all with tremendous views of the park. The property has a triple aspect and benefits from an abundance of natural light, large rooms and great volume throughout the apartment.\n" + "\n" +
                 "The accommodation comprises three double bedrooms and two bathrooms with an outstanding master bedroom with a large dressing room plus ensuite shower room also benefitting from air conditioning. There is a separate kitchen and breakfast room and double reception room with dining room. Further benefits include a guest WC and utility room. There is underfloor heating throughout plus a video entry system and fitted alarm.\n" + "\n" +
@@ -144,7 +148,7 @@ var propertyData = {
             "floorPlan": "./images/prop5/prop5FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/126646838#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 1,
                 "day": 2,
                 "year": 2022
             }
@@ -157,6 +161,7 @@ var propertyData = {
             "postcode": "NW1",
             "price": 5750000,
             "tenure": "Freehold",
+            "shortDescription" : "Exceptional four-bedroom duplex apartment in Arts & Crafts style building opposite Primrose Hill Park. Features air conditioning, underfloor heating, and full home automation. 3,185 sqft of living space includes a dual aspect living room, open plan kitchen, study, private gardens, and three en-suite bedrooms with private terrace for the principal bedroom",
             "description": "An exceptional four bedroom duplex apartment located opposite the entrance to Primrose Hill Park, on Elsworthy Road. The property is situated within a newly constructed home built in an Arts & Crafts style. This impressive apartment features air conditioning, underfloor heating and a full home automation package.\n" + "\n" +
                 "The accommodation comprises 3,185 sqft (295.9 m2) of living space over the two floors. The ground floor consists of a dual aspect living room with an open plan kitchen, study, utility room and front and rear private gardens. On the lower level you have a generous principal bedroom with a dressing room, en-suite bathroom and a private terrace, along with three further en-suite double bedrooms.\n" + "\n" +
                 "Situated on Elsworthy Road opposite the entrance to Primrose Hill, the apartment is a short stroll away from all of the amenities of the picturesque Primrose Hill Village, famed for its iconic park and wide selection of bespoke shops, boutiques, restaurants and street cafes. Both Swiss Cottage and Chalk Farm Underground Stations (Jubilee and Northern Line) are within close proximity (0.6mile).",
@@ -172,9 +177,9 @@ var propertyData = {
             "floorPlan": "./images/prop5/prop6FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/126802958#/?channel=RES_BUY",
             "added": {
-                "month": "October",
+                "month": 10,
                 "day": 20,
-                "year": 2022
+                "year": 2021
             }
         },
         {
@@ -185,6 +190,7 @@ var propertyData = {
             "postcode": "NW1",
             "price": 5950000,
             "tenure": "Freehold",
+            "shortDescription" : "Ground and lower-ground luxurious apartment with towering ceilings in a quiet residential area with private front garden and communal entrance. Features guest WC, formal reception, open-plan kitchen, dining, and living space with engineered oak flooring, underfloor heating and front garden views",
             "description": "The building is approached from Maresfield Gardens and is set far back from the quiet residential street, behind a front garden of Corten-framed beds and exquisite planting. Steps ascend to the raised ground foyer of the communal entrance.\n" + "\n" +
                 "The apartment unfurls over the ground and lower ground floors with soaring ceilings throughout. To right of the entrance is a guest WC and to the left of the hall lies a formal reception. A pair of full-height pivot doors open within a sublime hardwood bookcase to reveal a trio of high-reaching sash windows looking onto the front gardens.\n" + "\n" +
                 "Engineered oak in a light, chevron pattern extends through much of the upper leel, and underfloor heating is present throughout the apartment.  From the front reception, a wonderful line of sight is offered to the rear, where an open-plan kitchen, dining space and living room are arranged.",
@@ -200,7 +206,7 @@ var propertyData = {
             "floorPlan": "./images/prop7/prop7FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/127135595#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 9,
                 "day": 2,
                 "year": 2022
             }
@@ -208,104 +214,160 @@ var propertyData = {
     ]
 };
 
+// var propertyData;
+// fetch('properties.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         propertyData = data;    //parse the json data into the variable
+//     });
 
-/* <<<--------------------------- Search Page --------------------------->>> */
-function openNav() {
-    $("#mySidenav").css("width", "250px");
-}
+$(document).ready(function(){
 
-function closeNav() {
-    $("#mySidenav").css("width", "0");
-}
+    let filteredList;   //Properties those fulfill search criteria stores here
 
+    let favouriteList;  //favorites will store here
 
-$(document).ready(function () {  //Onclick submit button
-    $('#submitBtn').click(searchProp);
-});
+    if(localStorage.getItem('favouriteList')){
+        favouriteList = JSON.parse(localStorage.getItem('favouriteList'));  //Get back from local storage
+    } else{
+        favouriteList = [];     //empty array will add if 'favouriteList' isn't in the localstorage,
+    }
 
+    /* <<<--------------------------- Search Page --------------------------->>> */
 
-function searchProp() {
+    $( "#propertyType" ).selectmenu();  //jquery UI
+    $( "#dateAdded" ).selectmenu();
+    $( "#accordion" ).accordion();
 
-    const filteredList = [];
+    $("#slider").slider({   //jquery ui slider for getting price range
+        range: true,
+        min: 0,
+        max: 25000000,
+        values: [0, 25000000],
 
-    const type = $('#propertyType').val();
-    const minPrice = $('#minPrice').val();
-    const maxPrice = $('#maxPrice').val();
-    const minBedrooms = $('#minBedrooms').val();
-    const maxBedrooms = $('#maxBedrooms').val();
-    const postcode = $('#postCode').val();
-
-    // Use $.each() to iterate over the elements in the propertyData.property array
-    $.each(propertyData.property, function (index, property) {
-        // Check if the current element meets the search criteria
-        if ((type === 'Any' || property.type === type) && (minPrice === '' || property.price >= minPrice) &&
-            (maxPrice === '' || property.price <= maxPrice) && (minBedrooms === '' || property.bedrooms >= minBedrooms) &&
-            (maxBedrooms === '' || property.bedrooms <= maxBedrooms) && (postcode === '' || property.postcode === postcode)) {
-            console.log(property);
-            // If the element meets the search criteria, add it to the filteredList array
-            filteredList.push(property);
-            console.log(filteredList);
-
+        slide: function(event, ui) {
+            $("#range").html("£" + ui.values[0].toLocaleString() + " - £" + ui.values[1].toLocaleString()); //show slider values in html
         }
     });
-    const stringifiesFilteredList = JSON.stringify(filteredList); //Only strings can be stored in localstorage
-    localStorage.setItem('filteredList', stringifiesFilteredList);    //storing the stringifies objects into the localstorage
-    window.open('result.html');
-}
+    $("#range").html($("#slider").slider("values", 0) + " - " + $("#slider").slider("values", 1));
 
-/* <<<--------------------------- Result Page --------------------------->>> */
-
-const filteredListBack = JSON.parse(localStorage.getItem('filteredList'));   //read back the object from localstorage
-
-$.each(filteredListBack, function (index, property) {    // Loop through the array of filtered listings using the jQuery each() function
-
-    // Create a new property ad element using template literals and the current property object
-    const $propertyAd = $(`
-                <div class="propAdBox">
-  <img class="propMainImg" src="${property.picture1}" alt="${property.type}"/>
-  <div>
-    <h2 class="drag">${property.title}</h2>
-    <h4>${property.bedrooms} Bedrooms</h4>
-    <h5>${property.postcode}</h5>
-    <p>${property.shortDescription}</p>
-    <h3>${property.price}</h3>
-    <p class="seeMore">see more...</p>
-    <button class="favourite-button">Add to Favourites</button>
-  </div>
-</div>
-
-  `);
-    $('#filtered-properties-container').append($propertyAd);    // Append the property ad element to the page
-
-    $propertyAd.find('.seeMore').click(function () {
-        const stringifiesObject = JSON.stringify(property); //Only strings can be stored in localstorage
-        localStorage.setItem('property', stringifiesObject);    //storing the stringifies objects into the localstorage
-        window.open('property.html');
+    $( "#minBedrooms" ).spinner({   //jquery spinner for bedroom range
+        min: 1,
+        max: 15,
+        step: 1,
     });
-});
-
-let favouriteList = []; // Declare an empty array to store favourite items
-
-$(function () {
-    $('.drag').draggable({ // Make elements with class "drag" draggable
-        revert: true // When the draggable element is dropped, it will return to its original position
+    $( "#maxBedrooms" ).spinner({
+        min: 1,
+        max: 15,
+        step: 1,
     });
 
-    $("#drpToMe").droppable({ // Make element with id "drpToMe" a droppable target
-        drop: function(event, ui) { // When a draggable element is dropped on the droppable element
-            const content = ui.draggable.text(); // Get the text of the dropped element
-            //$(this).addClass("ui-state-highlight"); // Add the class "ui-state-highlight" to the droppable element
-            addPropertyToFavourites(content); // Call the function "addPropertyToFavourites" with the text of the dropped element as an argument
+
+    /* ---------- Submit Button function ---------- */
+    $('#submitBtn').click(function (){
+
+        filteredList = [];
+
+        const values = $("#slider").slider("values");
+        const type = $('#propertyType').val();
+        const postcode = $('#postCode').val();
+        const minBedrooms = $('#minBedrooms').val();
+        const maxBedrooms = $('#maxBedrooms').val();
+        const minPrice = values[0]; //get the min price from slider
+        const maxPrice = values[1];
+        const freehold = $('#Freehold-checkbox').is(':checked');    // check if the freehold checkbox is checked
+        const leasehold = $('#Leasehold-checkbox').is(':checked');
+        let tenureFH;
+        let tenureLH;
+        if (freehold === true){tenureFH = "Freehold"}
+        if (leasehold === true){tenureLH = "Leasehold"}
+        const dateAdded = $('#dateAdded').val();
+
+        $.each(propertyData.property, function (index, property) {  //iterate through the array and find matching properties
+            if ((type === 'Any' || property.type === type) &&
+                (postcode === 'Any' || postcode === '' || property.postcode === postcode) &&
+                (minBedrooms === '' || minBedrooms === 'No Min' || property.bedrooms >= minBedrooms) &&
+                (maxBedrooms === '' || maxBedrooms === 'No Max' || property.bedrooms <= maxBedrooms) &&
+                (minPrice === '' || property.price >= minPrice) &&
+                (maxPrice === '' || property.price <= maxPrice) &&
+                (tenureLH === undefined && tenureFH === undefined || tenureLH === property.tenure || tenureFH === property.tenure) &&
+                (dateAdded === 'Any' || dateAdded === 'This Year' && property.added.year === 2022 ||
+                    dateAdded === 'This Month' && property.added.month === 1 ||
+                    dateAdded === 'Last 6 Months' && property.added.year === 2022 &&  (property.added.month >= 6 && property.added.month <= 12))) {
+
+                filteredList.push(property);    // If the element meets the search criteria, add it to the filteredList array
+            }
+        });
+        localStorage.setItem('filteredList', JSON.stringify(filteredList));    //storing the stringifies objects into the localstorage
+        window.open('result.html');
+    });
+
+    $.each(favouriteList, function (index, property) {
+        createPropertyAdd(index,property,'#view-favorites-area');
+    })
+
+
+    /* <<<--------------------------- Result Page --------------------------->>> */
+
+    filteredList = JSON.parse(localStorage.getItem('filteredList'));   //read back the object from localstorage
+
+    /* ---------- Create ads for every matching properties ---------- */
+    $.each(filteredList, function (index, property)
+        {createPropertyAdd(index, property, '#filtered-properties-container')}
+    );
+
+    function createPropertyAdd (index, property, addingArea){
+        const formattedPrice = property.price.toLocaleString();
+        // Create a new property ad element using template literals and the current property object
+        const $propertyAd = $(`
+            <div class="propAdBox" style="position: relative">
+            <div style="width: 320px;">
+                <img class="propMainImg" src="${property.picture1}" alt="${property.type}"/>
+                </div>
+                <div style="margin: 10px;">
+                    <h2 class="property-title">${property.title}</h2>
+                    <h5>${property.type} in ${property.postcode}</h5>
+                    <h4>${property.tenure}</h4>
+                    <h4>${property.bedrooms} &nbsp;<i class="fa-solid fa-bed"></i></h4>
+                    <p class="p-details" style="font-size: 13px; width: 97%; height: 40%; margin-top: 5px">${property.shortDescription}<span class="seeMore" style="color: #0081ff; font-size: 16px"> see more...</span></p>
+                    <div style="display: flex; width: 97%;">
+                        <h3 style="color: #04AA6D; font-size: x-large; margin-right: 33%">£ ${formattedPrice}</h3>
+                        <button class="remove-button"><i class="fa-regular fa-trash-can fa-xl"></i></button>
+                        <button class="favourite-button">Add to Favourites</button> 
+                    </div>
+                </div>
+            </div>
+        `);
+        $(addingArea).append($propertyAd);    // Append the property ad element to the page
+
+        /* ---------- Onclick see more, save the selected property to the localstorage ---------- */
+        $propertyAd.find('.seeMore,.p-details').click(function () {
+            localStorage.setItem('property', JSON.stringify(property));    //storing the selected property objects into the localstorage
+            window.open('property.html');
+        });
+    }
+
+    /* ---------- Drag the title to add to the favourites ---------- */
+    $('.property-title').draggable({
+        revert: true  // return to original position after dropped
+    });
+
+    /* ---------- favourite area drop to add the dragged property ---------- */
+    $("#favourite-items-container").droppable({
+        drop: function(event, ui) {
+            const propertyTitle = ui.draggable.text(); //When a draggable element is dropped, get the text of the dropped element
+            addPropertyToFavourites(propertyTitle);
         }
     });
 
-    $('.favourite-button').click(function() { // When an element with class "favourite-button" is clicked
-        const propertyTitle = $(this).parent().find('h2').text(); // Get the text of the first h2 element within the parent element of the clicked element
-        addPropertyToFavourites(propertyTitle); // Call the function "addPropertyToFavourites" with the property title as an argument
+    /* ---------- Add to favourites ---------- */
+    $('.favourite-button').click(function() {
+        const propertyTitle = $(this).parent().parent().find('.property-title').text(); // Get  parent element of the clicked element
+        addPropertyToFavourites(propertyTitle);
     });
 
     function addPropertyToFavourites(propertyTitle) {
-        const favProperty = propertyData.property.find(element => element.title === propertyTitle);
+        const favProperty = propertyData.property.find(element => element.title === propertyTitle); // check if the property is not already in the favorites
         if (!favouriteList.includes(favProperty)) {
             favouriteList.push(favProperty);
             addPropertyToList(favProperty);
@@ -314,47 +376,54 @@ $(function () {
 
     function addPropertyToList(favProperty) {
         // Create a new element to be appended to the element with id "droppedList"
+        const formattedPrice = favProperty.price.toLocaleString();
         const $favAdded = $(`
-    <div class="favItemBox">
-    <div>
-      <h5 class="dragFavRemove">${favProperty.title}</h5>
-      <h4>£ ${favProperty.price}</h4>
-      </div>
-      <i class="fas fa-times delete-icon fa-xl"></i>
-    </div>
+                <div class="favItemBox">
+                <div>
+                    <h5 class="fav-added-title">${favProperty.title}</h5>
+                    <h4>£ ${formattedPrice}</h4>
+                    </div>
+                    <i class="fas fa-times delete-icon fa-xl"></i>
+                </div>
   `);
-        $('#droppedList').append($favAdded); // Append the newly created element to the element with id "droppedList"
-        // $('#favorites-list').append($favAdded); // Append the newly created element to the element with id "favorites-list"
+        $('#favourite-items').append($favAdded); // Append the newly created element to favourite-items
+        $('#favorites-list').append($favAdded);
     }
 
-    // <<<------------ Delete by icon begins ------------>>>
-
-// Add a click listener to the element with the id "droppedList"
-    $('#droppedList').on('click', '.delete-icon', function() {  // When the delete icon is clicked, find the text of the h5 element that is a sibling of the clicked element
-        const propertyTitle = $(this).parent().find('h5').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
+    /* ---------- Remove from favourites by cross delete icon ---------- */
+    $('#favourite-items').on('click', '.delete-icon', function() {
+        const propertyTitle = $(this).parent().find('.fav-added-title').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
         removePropertyFromFavourites(propertyTitle, this);
     });
 
-    function removePropertyFromFavourites(propertyTitle, clickedElement) {  // Find the index of the element in the favouriteList array that has a title property that matches the propertyTitle argument
-        const index = favouriteList.findIndex(element => element.title === propertyTitle);  // If the index is not equal to -1 (i.e. the element was found in the array)
-        if (index !== -1) { // Remove the element from the favouriteList array
-            favouriteList.splice(index, 1); // Remove the clicked element's parent element from the DOM
-            $(clickedElement).parent().remove();
+    /* ---------- Remove from favourites by delete icon in main ad box ---------- */
+    $('#filtered-properties-container').on('click', '.remove-button', function() {
+        const propertyTitle = $(this).parent().parent().find('.property-title').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
+        removePropertyFromFavourites(propertyTitle, '#favourite-items > .delete-icon');
+    });
+
+    function removePropertyFromFavourites(propertyTitle, clickedElement) {
+        const index = favouriteList.findIndex(element => element.title === propertyTitle);  // check if the property is already there
+        if (index !== -1) {
+            favouriteList.splice(index, 1);
+            $(clickedElement).parent().remove(); //remove the element from UI
+            localStorage.setItem("favouriteList", JSON.stringify(favouriteList));   //update localstorage after deletion
+            window.location.reload();   /// reload the page for update the favourite ad column
         }
     }
-    // <<<------------ Delete by icon ends ------------>>>
 
+    /* ---------- Clear favourite list ---------- */
     $('#clear-button').click(function() {
         clearFavourites();
     });
 
     function clearFavourites() {
         favouriteList.splice(0, favouriteList.length);  // Clear the favouriteList array
-        $('#droppedList').empty(); // Remove all elements from the element with id "droppedList"
+        $('#favourite-items').empty(); // Remove all elements
     }
 
-    // Add a click listener to the element with the id "droppedList"
-    $('#droppedList').on('click', '.favItemBox', function() {
+    /* ---------- Drag favourite added content ---------- */
+    $('#favourite-items').on('click', '.favItemBox', function() {
         $(this).draggable({ // Make the clicked element draggable
             revert: true // When the draggable element is dropped, it will return to its original position
         });
@@ -370,39 +439,30 @@ $(function () {
 
 
     //<<<----------- Save favourite to the properties and read it back ----------->>>
-
-// Retrieve the favouriteList array from local storage when the page is loaded
-    let favouriteList = JSON.parse(localStorage.getItem("favouriteList")) || [];
-
-// Iterate over the elements in the array and add them to the list
-    favouriteList.forEach(addPropertyToList);
-
-// Save the favouriteList array to local storage when the page is unloaded
+    favouriteList = JSON.parse(localStorage.getItem("favouriteList")) || [];    // Retrieve the favouriteList from local storage
+    favouriteList.forEach(addPropertyToList);   //add each favourite list property again
     window.addEventListener("beforeunload", function(event) {
-        localStorage.setItem("favouriteList", JSON.stringify(favouriteList));
+        localStorage.setItem("favouriteList", JSON.stringify(favouriteList));   // Save the favouriteList to local storage
     });
 
 
-});
+    /* <<<--------------------------- Property Page --------------------------->>> */
 
+    $("#propInfoTabs").tabs();  //jquery tab UI
 
+    const selectedProperty = JSON.parse(localStorage.getItem('property'));  //get the see more... selected property
 
-/* <<<--------------------------- Property Page --------------------------->>> */
-$(function () {
-    $("#propInfoTabs").tabs();
-});
+    $('.add-to-favourite').click(function(){
+        addPropertyToFavourites(selectedProperty.title);
+    });
 
-const backToProperty = JSON.parse(localStorage.getItem('property'));   //read back the object from localstorage
-propertyPage(backToProperty);
-
-function propertyPage(selectedProperty) {
-
-    $('.propImg1').append(`<img src="${selectedProperty.picture1}" alt="">`);
-    $('.propImg2').append(`<img src="${selectedProperty.picture2}" alt="">`);
-    $('.propImg3').append(`<img src="${selectedProperty.picture3}" alt="">`);
-    $('.propImg4').append(`<img src="${selectedProperty.picture4}" alt="">`);
-    $('.propImg5').append(`<img src="${selectedProperty.picture5}" alt="">`);
-    $('.propImg6').append(`<img src="${selectedProperty.picture6}" alt="">`);
+    // add selected object details into the main property page
+    $('.propImg1').append(`<img class="property-image" src="${selectedProperty.picture1}" alt="">`);
+    $('.propImg2').append(`<img class="property-image" src="${selectedProperty.picture2}" alt="">`);
+    $('.propImg3').append(`<img class="property-image" src="${selectedProperty.picture3}" alt="">`);
+    $('.propImg4').append(`<img class="property-image" src="${selectedProperty.picture4}" alt="">`);
+    $('.propImg5').append(`<img class="property-image" src="${selectedProperty.picture5}" alt="">`);
+    $('.propImg6').append(`<img class="property-image" src="${selectedProperty.picture6}" alt="">`);
 
     $('.propPic1').append(`<img class="propImageSelector" src="${selectedProperty.picture1}" onclick="currentSlide(1)" alt="">`);
     $('.propPic2').append(`<img class="propImageSelector" src="${selectedProperty.picture2}" onclick="currentSlide(2)" alt="">`);
@@ -411,12 +471,25 @@ function propertyPage(selectedProperty) {
     $('.propPic5').append(`<img class="propImageSelector" src="${selectedProperty.picture5}" onclick="currentSlide(5)" alt="">`);
     $('.propPic6').append(`<img class="propImageSelector" src="${selectedProperty.picture6}" onclick="currentSlide(6)" alt="">`);
 
-    $(`.propDetails`).append(selectedProperty.description);
-    $(`.propFloorPlan`).append(`<img src="${selectedProperty.floorPlan}" alt="">`);
-    $(`.propLocation`).append(`<iframe src="${selectedProperty.location}"></iframe>`);
-}
+    const formattedPrice = selectedProperty.price.toLocaleString(); //make price readable (1000000 => 1,000,000)
 
-// <-------- SlideShow begins ------->
+    $(`.title-fullPage`).append(selectedProperty.title);
+    $(`.postcode-fullPage`).append(selectedProperty.postcode);
+    $(`.date-fullPage`).append(selectedProperty.added.year + "/" +  selectedProperty.added.month + "/" + selectedProperty.added.day);
+    $(`.type-fullPage`).append(selectedProperty.type);
+    $(`.bedrooms-fullPage`).append(selectedProperty.bedrooms);
+    $(`.tenure-fullPage`).append(selectedProperty.tenure);
+    $(`.price-fullPage`).append(formattedPrice);
+
+    $(`.propDetails`).append(selectedProperty.description);
+    $(`.propFloorPlan`).append(`<img src="${selectedProperty.floorPlan}" alt="" style="width: 100%">`);
+    $(`.propLocation`).append(`<iframe src="${selectedProperty.location}"></iframe>`);
+
+
+})
+
+
+// <-------- Image gallery slideshow function ------->
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -425,10 +498,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    //let i;
     let slides = $(".propLargeImage");
     let dots = $(".propImageSelector");
-    //let captionText = $("#caption");
     if (n > slides.length) {
         slideIndex = 1
     }
@@ -439,11 +510,4 @@ function showSlides(n) {
     dots.removeClass("active");
     $(slides[slideIndex - 1]).css("display", "block");
     $(dots[slideIndex - 1]).addClass("active");
-    //captionText.html(dots[slideIndex-1].alt);
 }
-
-// <-------- SlideShow ends ------->
-
-
-
-

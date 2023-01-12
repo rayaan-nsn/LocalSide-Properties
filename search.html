@@ -6,69 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
     <link rel="stylesheet" href="localSide.css">
+    <link rel="stylesheet" href="./images/jQueryUI-Hidden/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="placeholder"></div>
 
-<!--<div id="mySidenav" class="sidenav">-->
-<!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-<!--    <a href="#">About</a>-->
-<!--    <a href="#">Services</a>-->
-<!--    <a href="#">Clients</a>-->
-<!--    <a href="#">Contact</a>-->
-<!--    <div id="favorites-list"></div>-->
-<!--</div>-->
-
-<!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
-<div class="row">
-    <div class="column1">
-        <form id="form">
-            <fieldset>
-                <legend>Property Options</legend>
-                <label for="propertyType">Property Type</label><br />
-                <select name="propertyType" id="propertyType">
-                    <option selected="selected">Any</option>
-                    <option>House</option>
-                    <option>Apartment</option></select
-                ><br><br>
-                <label for="minPrice">Minimum Price:</label>
-                <input type="number" id="minPrice" name="minPrice" value="0">
-                <br><br>
-                <label for="maxPrice">Maximum Price:</label>
-                <input type="number" id="maxPrice" name="maxPrice" value="10000000000">
-                <br><br>
-                <label for="minBedrooms">Minimum Bedrooms:</label>
-                <input type="number" id="minBedrooms" name="minBedrooms" value="1">
-                <br><br>
-                <label for="maxBedrooms">Maximum Bedrooms:</label>
-                <input type="number" id="maxBedrooms" name="maxBedrooms" value="5">
-                <br><br>
-                <label for="dateAdded">Date Added</label><br />
-                <select name="dateAdded" id="dateAdded">
-
-                    <option selected="selected">Any</option>
-                    <option>Today</option>
-                    <option>Last 3 Days</option>
-                    <option>This Week</option>
-                    <option>This Month</option>
-                    <option>This Year</option>
-                </select>
-                <br><br>
-                <label for="postCode">Postal Code</label>
-                <input type="text" id="postCode" name="postCode" value="NW1">
-            </fieldset>
-            <input type="submit" id="submitBtn" value="Search"/>
-        </form>
+<nav class="topnav" style="display: flex; justify-content: space-between">
+    <div>
+        <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+        <a class="active" href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+        <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+        <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
     </div>
-    <div class="column2">
-        <h2>Column 2</h2>
-        <p>Some text..</p>
-        <div id="favlist"></div>
+    <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
+</nav>
+
+<div class="row">
+    <div class="column1" style="margin-top: 87px">
+        <div id="accordion">
+            <h3>Search</h3>
+            <div>
+                <form id="form">
+                    <fieldset style="border: none; width: 75%; display: block; margin: auto; padding: 3% 3% 2.5%;">
+                        <div class="search-row1">
+                            <div>
+                                <label for="propertyType">Property Type</label><br/>
+                                <select name="propertyType" id="propertyType">
+                                    <option selected="selected">Any</option>
+                                    <option>House</option>
+                                    <option>Apartment</option>
+                                </select>
+                            </div>
+                            <br><br>
+                            <div>
+                                <label for="postCode">Postal Code</label><br>
+                                <input type="text" id="postCode" name="postCode" value="Any"
+                                       style="height: 29px; width: 255px">
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <div class="search-row2">
+                            <div>
+                                <label for="minBedrooms">Minimum Bedrooms</label><br>
+                                <input type="text" id="minBedrooms" name="minBedrooms" value="No Min">
+                            </div>
+                            <br><br>
+                            <div>
+                                <label for="maxBedrooms">Maximum Bedrooms:</label><br>
+                                <input type="text" id="maxBedrooms" name="maxBedrooms" value="No Max">
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <div id="slider"></div>
+                        <br>
+                        <p> Price Range: <span id="range"></span></p>
+                        <br><br>
+
+                        <div class="search-row1">
+                            <fieldset
+                                    style="width: 200px; border: none; display: flex; justify-content: space-between; padding: 0; ">
+                                <legend style="margin-bottom: 10px">Hotel Ratings</legend>
+                                <div>
+                                    <label for="Freehold-checkbox" style="font-size: larger;">Freehold </label>
+                                    <input type="checkbox" name="Freehold-checkbox" id="Freehold-checkbox">
+                                </div>
+                                <div>
+                                    <label for="Leasehold-checkbox" style="font-size: larger;">Leasehold </label>
+                                    <input type="checkbox" name="Leasehold-checkbox" id="Leasehold-checkbox">
+                                </div>
+                            </fieldset>
+                            <br><br>
+
+                            <div>
+                                <label for="dateAdded">Date Added</label><br/>
+                                <select name="dateAdded" id="dateAdded">
+                                    <option selected="selected">Any</option>
+                                    <option>This Month</option>
+                                    <option>Last 6 Months</option>
+                                    <option>This Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <input type="submit" id="submitBtn" value="Find Properties "/>
+                    </fieldset>
+                    <br>
+                </form>
+            </div>
+            <h3>Favourites</h3>
+            <div>
+                <div id="view-favorites-area"></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="droppable remove-area" class="column2">
+        <h2>FAVOURITES</h2>
+        <div id="favourite-items-container">
+            <p></p>
+            <div id="favourite-items"></div>
+        </div>
+        <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
     </div>
 </div>
 
-      
 </body>
 <script src="localSide.js"></script>
 </html>

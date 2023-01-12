@@ -4,8 +4,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home - Property Finder</title>
-        <link rel="styleSheet" href="myBin/propertyFinder.css" />
+        <link rel="styleSheet" href="localSide.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
         <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
         <script
@@ -14,103 +15,38 @@
         ></script>
     </head>
     <body>
-        <nav>
-            <img
-                class="navLogo"
-                src="./images/logo-LocalSide.png"
-                style="height: 2vw"
-            />
-            <a class="activePage" href="home.html"> Home </a>
-            <a href="property.html"> Property </a>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-whatsapp"></i>
-        </nav>
-
-        <header>
-            <img class="homeLogo" src="./images/logo-LocalSide.png" />
-        </header>
-
-        <a href="property.html"><button class="searchMeBtn">Search Property</button></a>
-
-        <div class="homContainer">
-            <div class="homeColumn">
-                <div id="slideshow1">
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/house1.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/house2.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/house3.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/house4.jpeg"
-                    />
-                </div>
-            </div>
-            <div class="homeColumn">
-                <div id="slideshow2">
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside1.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside2.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside3.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside4.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside5.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/inside6.jpeg"
-                    />
-                </div>
-            </div>
-            <div class="homeColumn">
-                <div id="slideshow3">
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land1.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land2.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land3.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land4.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land5.jpeg"
-                    />
-                    <img
-                        class="homeSlideImages"
-                        src="./images/homePageImages/land6.jpeg"
-                    />
-                </div>
-            </div>
+    <nav class="topnav" style="display: flex; justify-content: space-between">
+        <div>
+        <a class="active" href="./home.html">Home &nbsp;&nbsp;<i class="fa-solid fa-house"></i></a>
+        <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+        <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+        <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
         </div>
+        <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
+    </nav>
+<!--        <nav>-->
+<!--            <img-->
+<!--                class="navLogo"-->
+<!--                src="./images/logo-LocalSide.png"-->
+<!--                style="height: 2vw"-->
+<!--            />-->
+<!--            <a class="activePage" href="home.html"> Home </a>-->
+<!--            <a href="property.html"> Property </a>-->
+<!--            <i class="fa-brands fa-twitter"></i>-->
+<!--            <i class="fa-brands fa-facebook-f"></i>-->
+<!--            <i class="fa-brands fa-whatsapp"></i>-->
+<!--        </nav>-->
+    <img src="./images/homeImg.png" style="width: 100%">
+    <div class="homeBox">
+        <h1>Find Your Dream Property</h1>
+        <h5>Search properties for sale and to rent in the UK</h5>
+        <button onclick="window.location.href = 'search.html'">Go To Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></button>
+    </div>
+
+
+<!--        <a href="search.html"><button class="searchMeBtn" style="height: 100px">Search Property</button></a>-->
+
+
     </body>
 
     <script src="propertyFinder.js"></script>
