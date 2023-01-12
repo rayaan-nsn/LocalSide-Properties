@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Result Page</title>
     <link rel="stylesheet" href="localSide.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./images/jQueryUI-Hidden/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -13,20 +13,18 @@
 <body>
 <nav class="topnav" style="display: flex; justify-content: space-between">
     <div>
-    <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
-    <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
-    <a class="active" href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
-    <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
+        <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+        <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+        <a class="active" href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+        <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
     </div>
     <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
 </nav>
 <div class="row">
     <div class="column1">
-        <h2></h2>
-        <!-- Define the container element where the objects will be added -->
         <div id="filtered-properties-container"></div>
     </div>
-    <div id="droppable remove-area"  class="column2">
+    <div id="droppable remove-area" class="column2">
         <h2>FAVOURITES</h2>
         <div id="favourite-items-container">
             <p></p>
@@ -35,8 +33,6 @@
         <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
     </div>
 </div>
-
-
 
 </body>
 <script src="localSide.js"></script>

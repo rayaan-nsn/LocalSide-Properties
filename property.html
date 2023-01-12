@@ -5,75 +5,75 @@
 </head>
 <link rel="stylesheet" href="localSide.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="./images/jQueryUI-Hidden/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
 <body>
 <nav class="topnav" style="display: flex; justify-content: space-between">
     <div>
-    <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
-    <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
-    <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
-    <a class="active" href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
+        <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+        <a href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+        <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+        <a class="active" href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
     </div>
     <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
 </nav>
 <div class="property-top-details">
-<div class="propImageContainer">
-    <div class="propLargeImage propImg1"></div>
-    <div class="propLargeImage propImg2"></div>
-    <div class="propLargeImage propImg3"></div>
-    <div class="propLargeImage propImg4"></div>
-    <div class="propLargeImage propImg5"></div>
-    <div class="propLargeImage propImg6"></div>
-    <div class="propSmallImageRow">
-        <div class="propSmallImage propPic1"></div>
-        <div class="propSmallImage propPic2"></div>
-        <div class="propSmallImage propPic3"></div>
-        <div class="propSmallImage propPic4"></div>
-        <div class="propSmallImage propPic5"></div>
-        <div class="propSmallImage propPic6"></div>
-    </div>
-</div>
-
-<div id="property-details-container">
-    <h1 class="title-fullPage"></h1>
-    <h4 class="postcode-fullPage">POSTCODE : </h4>
-    <p class="date-fullPage" style="font-size: 10px"></p>
-    <div class="typeNTenure-container">
-    <h2 class="type-fullPage">
-        <span style="font-size: small">PROPERTY TYPE</span><br>
-    </h2>
-    <h2 class="tenure-fullPage">
-        <span style="font-size: small">TENURE</span><br>
-    </h2>
-        <h2 class="bedrooms-fullPage">
-            <span style="font-size: small">BEDROOMS</span><br>
-        </h2>
-    </div>
-    <div class="price-n-btn">
-    <h1 class="price-fullPage">&#163;</h1>
-        <button class="add-to-favourite">Add To Favourite</button>
+    <div class="propImageContainer">
+        <div class="propLargeImage propImg1"></div>
+        <div class="propLargeImage propImg2"></div>
+        <div class="propLargeImage propImg3"></div>
+        <div class="propLargeImage propImg4"></div>
+        <div class="propLargeImage propImg5"></div>
+        <div class="propLargeImage propImg6"></div>
+        <div class="propSmallImageRow">
+            <div class="propSmallImage propPic1"></div>
+            <div class="propSmallImage propPic2"></div>
+            <div class="propSmallImage propPic3"></div>
+            <div class="propSmallImage propPic4"></div>
+            <div class="propSmallImage propPic5"></div>
+            <div class="propSmallImage propPic6"></div>
+        </div>
     </div>
 
-    <div id="propInfoTabs">
-        <ul>
-            <li><a href="#detailsTab">Details</a></li>
-            <li><a href="#floorPlanTab">Floor Plan</a></li>
-            <li><a href="#locationMapTab">Maps</a></li>
-        </ul>
-        <div id="detailsTab">
-            <p class="propDetails"></p>
+    <div id="property-details-container">
+        <h1 class="title-fullPage"></h1>
+        <h4 class="postcode-fullPage">POSTCODE : </h4>
+        <p class="date-fullPage" style="font-size: 10px"></p>
+        <div class="typeNTenure-container">
+            <h2 class="type-fullPage">
+                <span style="font-size: small">PROPERTY TYPE</span><br>
+            </h2>
+            <h2 class="tenure-fullPage">
+                <span style="font-size: small">TENURE</span><br>
+            </h2>
+            <h2 class="bedrooms-fullPage">
+                <span style="font-size: small">BEDROOMS</span><br>
+            </h2>
         </div>
-        <div id="floorPlanTab">
-            <div class="propFloorPlan" ></div>
+        <div class="price-n-btn">
+            <h1 class="price-fullPage">&#163;</h1>
+            <button class="add-to-favourite">Add To Favourite</button>
         </div>
-        <div id="locationMapTab">
-            <div class="propLocation"></div>
+
+        <div id="propInfoTabs">
+            <ul>
+                <li><a href="#detailsTab">Details</a></li>
+                <li><a href="#floorPlanTab">Floor Plan</a></li>
+                <li><a href="#locationMapTab">Maps</a></li>
+            </ul>
+            <div id="detailsTab">
+                <p class="propDetails"></p>
+            </div>
+            <div id="floorPlanTab">
+                <div class="propFloorPlan"></div>
+            </div>
+            <div id="locationMapTab">
+                <div class="propLocation"></div>
+            </div>
         </div>
     </div>
-</div>
 
 </div>
 

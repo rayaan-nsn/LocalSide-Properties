@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
     <link rel="stylesheet" href="localSide.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./images/jQueryUI-Hidden/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    <!-- JQueryLink -->
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/10446019b7.js" crossorigin="anonymous"></script>
@@ -16,17 +16,14 @@
 
 <nav class="topnav" style="display: flex; justify-content: space-between">
     <div>
-    <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
-    <a class="active" href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
-    <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
-    <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
-        </div>
+        <a href="./home.html">Home &nbsp;&nbsp<i class="fa-solid fa-house"></i></a>
+        <a class="active" href="./search.html">Search &nbsp;&nbsp; <i class="fa-brands fa-searchengin"></i></a>
+        <a href="./result.html">Result &nbsp;&nbsp; <i class="fa-regular fa-rectangle-list"></i></a>
+        <a href="./property.html">Property &nbsp;&nbsp; <i class="fa-solid fa-building-user"></i></a>
+    </div>
     <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
 </nav>
 
-
-
-<!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
 <div class="row">
     <div class="column1" style="margin-top: 87px">
         <div id="accordion">
@@ -34,7 +31,6 @@
             <div>
                 <form id="form">
                     <fieldset style="border: none; width: 75%; display: block; margin: auto; padding: 3% 3% 2.5%;">
-<!--                        <h1 style="display: block; margin: auto">Find Your Dream Property</h1><br><br>-->
                         <div class="search-row1">
                             <div>
                                 <label for="propertyType">Property Type</label><br/>
@@ -43,10 +39,12 @@
                                     <option>House</option>
                                     <option>Apartment</option>
                                 </select>
-                            </div><br><br>
+                            </div>
+                            <br><br>
                             <div>
                                 <label for="postCode">Postal Code</label><br>
-                                <input type="text" id="postCode" name="postCode" value="Any" style="height: 29px; width: 255px">
+                                <input type="text" id="postCode" name="postCode" value="Any"
+                                       style="height: 29px; width: 255px">
                             </div>
                         </div>
                         <br><br>
@@ -54,8 +52,9 @@
                         <div class="search-row2">
                             <div>
                                 <label for="minBedrooms">Minimum Bedrooms</label><br>
-                                <input type="text" id="minBedrooms" name="minBedrooms" value="No Min" >
-                            </div><br><br>
+                                <input type="text" id="minBedrooms" name="minBedrooms" value="No Min">
+                            </div>
+                            <br><br>
                             <div>
                                 <label for="maxBedrooms">Maximum Bedrooms:</label><br>
                                 <input type="text" id="maxBedrooms" name="maxBedrooms" value="No Max">
@@ -69,17 +68,19 @@
                         <br><br>
 
                         <div class="search-row1">
-                            <fieldset style="width: 200px; border: none; display: flex; justify-content: space-between; padding: 0; ">
+                            <fieldset
+                                    style="width: 200px; border: none; display: flex; justify-content: space-between; padding: 0; ">
                                 <legend style="margin-bottom: 10px">Hotel Ratings</legend>
                                 <div>
                                     <label for="Freehold-checkbox" style="font-size: larger;">Freehold </label>
-                                    <input type="checkbox" name="Freehold-checkbox" id="Freehold-checkbox" >
+                                    <input type="checkbox" name="Freehold-checkbox" id="Freehold-checkbox">
                                 </div>
                                 <div>
                                     <label for="Leasehold-checkbox" style="font-size: larger;">Leasehold </label>
                                     <input type="checkbox" name="Leasehold-checkbox" id="Leasehold-checkbox">
                                 </div>
-                            </fieldset><br><br>
+                            </fieldset>
+                            <br><br>
 
                             <div>
                                 <label for="dateAdded">Date Added</label><br/>
@@ -90,10 +91,11 @@
                                     <option>This Year</option>
                                 </select>
                             </div>
-                        </div><br><br><br>
+                        </div>
+                        <br><br><br>
                         <input type="submit" id="submitBtn" value="Find Properties "/>
                     </fieldset>
-<!--                    <div id="view-favorites-area"></div>-->
+                    <br>
                 </form>
             </div>
             <h3>Favourites</h3>
@@ -112,8 +114,6 @@
         <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
     </div>
 </div>
-
-
 
 </body>
 <script src="localSide.js"></script>

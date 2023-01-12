@@ -214,43 +214,44 @@ var propertyData = {
     ]
 };
 
-
+// var propertyData;
+// fetch('properties.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         propertyData = data;    //parse the json data into the variable
+//     });
 
 $(document).ready(function(){
 
-    let filteredList;
+    let filteredList;   //Properties those fulfill search criteria stores here
 
-    let favouriteList;
+    let favouriteList;  //favorites will store here
 
     if(localStorage.getItem('favouriteList')){
-        favouriteList = JSON.parse(localStorage.getItem('favouriteList'));
+        favouriteList = JSON.parse(localStorage.getItem('favouriteList'));  //Get back from local storage
     } else{
-        favouriteList = []
+        favouriteList = [];     //empty array will add if 'favouriteList' isn't in the localstorage,
     }
 
     /* <<<--------------------------- Search Page --------------------------->>> */
-    $( "#propertyType" ).selectmenu();
+
+    $( "#propertyType" ).selectmenu();  //jquery UI
     $( "#dateAdded" ).selectmenu();
     $( "#accordion" ).accordion();
 
-
-    $("#slider").slider({
+    $("#slider").slider({   //jquery ui slider for getting price range
         range: true,
         min: 0,
         max: 25000000,
         values: [0, 25000000],
 
         slide: function(event, ui) {
-            $("#range").html("£" + ui.values[0].toLocaleString() + " - £" + ui.values[1].toLocaleString());
+            $("#range").html("£" + ui.values[0].toLocaleString() + " - £" + ui.values[1].toLocaleString()); //show slider values in html
         }
     });
     $("#range").html($("#slider").slider("values", 0) + " - " + $("#slider").slider("values", 1));
 
-    // const values = $("#slider").slider("values");
-    // console.log(values[0]);  // start value of the range
-    // console.log(values[1]);  // end value of the range
-
-    $( "#minBedrooms" ).spinner({
+    $( "#minBedrooms" ).spinner({   //jquery spinner for bedroom range
         min: 1,
         max: 15,
         step: 1,
@@ -262,53 +263,27 @@ $(document).ready(function(){
     });
 
 
-
     /* ---------- Submit Button function ---------- */
     $('#submitBtn').click(function (){
 
         filteredList = [];
 
         const values = $("#slider").slider("values");
-        console.log(values[0]);  // start value of the range
-        console.log(values[1]);  // end value of the range
-
         const type = $('#propertyType').val();
         const postcode = $('#postCode').val();
         const minBedrooms = $('#minBedrooms').val();
         const maxBedrooms = $('#maxBedrooms').val();
-        const minPrice = values[0];
+        const minPrice = values[0]; //get the min price from slider
         const maxPrice = values[1];
-        const freehold = $('#Freehold-checkbox').is(':checked');
+        const freehold = $('#Freehold-checkbox').is(':checked');    // check if the freehold checkbox is checked
         const leasehold = $('#Leasehold-checkbox').is(':checked');
         let tenureFH;
         let tenureLH;
-        if (freehold === true){
-            tenureFH = "Freehold"
-        }
-        if (leasehold === true){
-            tenureLH = "Leasehold"
-        }
-
-
+        if (freehold === true){tenureFH = "Freehold"}
+        if (leasehold === true){tenureLH = "Leasehold"}
         const dateAdded = $('#dateAdded').val();
 
-
-
-
-
-        // $.each(propertyData.property, function (index, property) {  //iterate through the array and find matching properties
-        //     if ((type === 'Any' || property.type === type) &&
-        //          (minPrice === '' || property.price >= minPrice) &&
-        //         (maxPrice === '' || property.price <= maxPrice) &&
-        //         (minBedrooms === '' || property.bedrooms >= minBedrooms) &&
-        //         (maxBedrooms === '' || property.bedrooms <= maxBedrooms) &&
-        //         (postcode === 'Any' ||postcode === '' || property.postcode === postcode)) {
-        //         filteredList.push(property);    // If the element meets the search criteria, add it to the filteredList array
-        //     }
-        // });
         $.each(propertyData.property, function (index, property) {  //iterate through the array and find matching properties
-
-
             if ((type === 'Any' || property.type === type) &&
                 (postcode === 'Any' || postcode === '' || property.postcode === postcode) &&
                 (minBedrooms === '' || minBedrooms === 'No Min' || property.bedrooms >= minBedrooms) &&
@@ -319,30 +294,18 @@ $(document).ready(function(){
                 (dateAdded === 'Any' || dateAdded === 'This Year' && property.added.year === 2022 ||
                     dateAdded === 'This Month' && property.added.month === 1 ||
                     dateAdded === 'Last 6 Months' && property.added.year === 2022 &&  (property.added.month >= 6 && property.added.month <= 12))) {
+
                 filteredList.push(property);    // If the element meets the search criteria, add it to the filteredList array
-
-
-                console.log("date " + dateAdded);
-
             }
         });
-
         localStorage.setItem('filteredList', JSON.stringify(filteredList));    //storing the stringifies objects into the localstorage
         window.open('result.html');
     });
 
-    // $('#view-favorites-button').click(function () {
-        $.each(favouriteList, function (index, property) {
-            createPropertyAdd(index,property,'#view-favorites-area');
-        })
-    // })
-
-
-
-
     $.each(favouriteList, function (index, property) {
-            createPropertyAdd(index,property,'#fav-page-content');
-        })
+        createPropertyAdd(index,property,'#view-favorites-area');
+    })
+
 
     /* <<<--------------------------- Result Page --------------------------->>> */
 
@@ -369,10 +332,8 @@ $(document).ready(function(){
                     <p class="p-details" style="font-size: 13px; width: 97%; height: 40%; margin-top: 5px">${property.shortDescription}<span class="seeMore" style="color: #0081ff; font-size: 16px"> see more...</span></p>
                     <div style="display: flex; width: 97%;">
                         <h3 style="color: #04AA6D; font-size: x-large; margin-right: 33%">£ ${formattedPrice}</h3>
-                    
                         <button class="remove-button"><i class="fa-regular fa-trash-can fa-xl"></i></button>
-                        <button class="favourite-button">Add to Favourites</button>
-                        
+                        <button class="favourite-button">Add to Favourites</button> 
                     </div>
                 </div>
             </div>
@@ -391,21 +352,22 @@ $(document).ready(function(){
         revert: true  // return to original position after dropped
     });
 
+    /* ---------- favourite area drop to add the dragged property ---------- */
     $("#favourite-items-container").droppable({
-        drop: function(event, ui) { // When a draggable element is dropped on the droppable element
-            const propertyTitle = ui.draggable.text(); // Get the text of the dropped element
-            addPropertyToFavourites(propertyTitle); // Call the function "addPropertyToFavourites" with the text of the dropped element as an argument
+        drop: function(event, ui) {
+            const propertyTitle = ui.draggable.text(); //When a draggable element is dropped, get the text of the dropped element
+            addPropertyToFavourites(propertyTitle);
         }
     });
 
+    /* ---------- Add to favourites ---------- */
     $('.favourite-button').click(function() {
-        const propertyTitle = $(this).parent().parent().find('.property-title').text(); // Get the text of the first h2 element within the parent element of the clicked element
-        addPropertyToFavourites(propertyTitle); // Call the function "addPropertyToFavourites" with the property title as an argument
+        const propertyTitle = $(this).parent().parent().find('.property-title').text(); // Get  parent element of the clicked element
+        addPropertyToFavourites(propertyTitle);
     });
 
-
     function addPropertyToFavourites(propertyTitle) {
-        const favProperty = propertyData.property.find(element => element.title === propertyTitle);
+        const favProperty = propertyData.property.find(element => element.title === propertyTitle); // check if the property is not already in the favorites
         if (!favouriteList.includes(favProperty)) {
             favouriteList.push(favProperty);
             addPropertyToList(favProperty);
@@ -424,33 +386,31 @@ $(document).ready(function(){
                     <i class="fas fa-times delete-icon fa-xl"></i>
                 </div>
   `);
-
-        $('#favourite-items').append($favAdded); // Append the newly created element to the element with id "droppedList"
-        $('#favorites-list').append($favAdded); // Append the newly created element to the element with id "favorites-list"
+        $('#favourite-items').append($favAdded); // Append the newly created element to favourite-items
+        $('#favorites-list').append($favAdded);
     }
 
-
-    /* ---------- Remove from favourites by delete icon ---------- */
+    /* ---------- Remove from favourites by cross delete icon ---------- */
     $('#favourite-items').on('click', '.delete-icon', function() {
         const propertyTitle = $(this).parent().find('.fav-added-title').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
         removePropertyFromFavourites(propertyTitle, this);
     });
 
+    /* ---------- Remove from favourites by delete icon in main ad box ---------- */
     $('#filtered-properties-container').on('click', '.remove-button', function() {
         const propertyTitle = $(this).parent().parent().find('.property-title').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
         removePropertyFromFavourites(propertyTitle, '#favourite-items > .delete-icon');
     });
 
     function removePropertyFromFavourites(propertyTitle, clickedElement) {
-        const index = favouriteList.findIndex(element => element.title === propertyTitle);
+        const index = favouriteList.findIndex(element => element.title === propertyTitle);  // check if the property is already there
         if (index !== -1) {
             favouriteList.splice(index, 1);
-            $(clickedElement).parent().remove();
-            localStorage.setItem("favouriteList", JSON.stringify(favouriteList))
-            window.location.reload();
+            $(clickedElement).parent().remove(); //remove the element from UI
+            localStorage.setItem("favouriteList", JSON.stringify(favouriteList));   //update localstorage after deletion
+            window.location.reload();   /// reload the page for update the favourite ad column
         }
     }
-
 
     /* ---------- Clear favourite list ---------- */
     $('#clear-button').click(function() {
@@ -459,10 +419,10 @@ $(document).ready(function(){
 
     function clearFavourites() {
         favouriteList.splice(0, favouriteList.length);  // Clear the favouriteList array
-        $('#favourite-items').empty(); // Remove all elements from the element with id "droppedList"
+        $('#favourite-items').empty(); // Remove all elements
     }
 
-    // Add a click listener to the element with the id "droppedList"
+    /* ---------- Drag favourite added content ---------- */
     $('#favourite-items').on('click', '.favItemBox', function() {
         $(this).draggable({ // Make the clicked element draggable
             revert: true // When the draggable element is dropped, it will return to its original position
@@ -480,16 +440,15 @@ $(document).ready(function(){
 
     //<<<----------- Save favourite to the properties and read it back ----------->>>
     favouriteList = JSON.parse(localStorage.getItem("favouriteList")) || [];    // Retrieve the favouriteList from local storage
-    favouriteList.forEach(addPropertyToList);
-    window.addEventListener("beforeunload", function(event) {   // Save the favouriteList to local storage
-        localStorage.setItem("favouriteList", JSON.stringify(favouriteList));
+    favouriteList.forEach(addPropertyToList);   //add each favourite list property again
+    window.addEventListener("beforeunload", function(event) {
+        localStorage.setItem("favouriteList", JSON.stringify(favouriteList));   // Save the favouriteList to local storage
     });
-
 
 
     /* <<<--------------------------- Property Page --------------------------->>> */
 
-    $("#propInfoTabs").tabs();
+    $("#propInfoTabs").tabs();  //jquery tab UI
 
     const selectedProperty = JSON.parse(localStorage.getItem('property'));  //get the see more... selected property
 
@@ -497,6 +456,7 @@ $(document).ready(function(){
         addPropertyToFavourites(selectedProperty.title);
     });
 
+    // add selected object details into the main property page
     $('.propImg1').append(`<img class="property-image" src="${selectedProperty.picture1}" alt="">`);
     $('.propImg2').append(`<img class="property-image" src="${selectedProperty.picture2}" alt="">`);
     $('.propImg3').append(`<img class="property-image" src="${selectedProperty.picture3}" alt="">`);
@@ -511,7 +471,7 @@ $(document).ready(function(){
     $('.propPic5').append(`<img class="propImageSelector" src="${selectedProperty.picture5}" onclick="currentSlide(5)" alt="">`);
     $('.propPic6').append(`<img class="propImageSelector" src="${selectedProperty.picture6}" onclick="currentSlide(6)" alt="">`);
 
-    const formattedPrice = selectedProperty.price.toLocaleString();
+    const formattedPrice = selectedProperty.price.toLocaleString(); //make price readable (1000000 => 1,000,000)
 
     $(`.title-fullPage`).append(selectedProperty.title);
     $(`.postcode-fullPage`).append(selectedProperty.postcode);
@@ -529,234 +489,7 @@ $(document).ready(function(){
 })
 
 
-
-
-// $( function() {
-//     // $( "#propertyType" ).selectmenu();
-//     // $( "#dateAdded" ).selectmenu();
-//
-//     $("#slider").slider({
-//         range: true,
-//         min: 0,
-//         max: 100,
-//         values: [25, 75],
-//         slide: function(event, ui) {
-//             $("#range").html(ui.values[0] + " - " + ui.values[1]);
-//         }
-//     });
-//     $("#range").html($("#slider").slider("values", 0) + " - " + $("#slider").slider("values", 1));
-//
-//     var values = $("#slider").slider("values");
-//     console.log(values[0]);  // start value of the range
-//     console.log(values[1]);  // end value of the range
-//
-// } );
-
-// $(document).ready(function () {  //Onclick submit button
-//     $('#submitBtn').click(searchProp);
-// });
-
-
-// function searchProp() {
-//
-//     const filteredList = [];
-//
-//     const type = $('#propertyType').val();
-//     const minPrice = $('#minPrice').val();
-//     const maxPrice = $('#maxPrice').val();
-//     const minBedrooms = $('#minBedrooms').val();
-//     const maxBedrooms = $('#maxBedrooms').val();
-//     const postcode = $('#postCode').val();
-//
-//     // Use $.each() to iterate over the elements in the propertyData.property array
-//     $.each(propertyData.property, function (index, property) {
-//         // Check if the current element meets the search criteria
-//         if ((type === 'Any' || property.type === type) && (minPrice === '' || property.price >= minPrice) &&
-//             (maxPrice === '' || property.price <= maxPrice) && (minBedrooms === '' || property.bedrooms >= minBedrooms) &&
-//             (maxBedrooms === '' || property.bedrooms <= maxBedrooms) && (postcode === '' || property.postcode === postcode)) {
-//             console.log(property);
-//             // If the element meets the search criteria, add it to the filteredList array
-//             filteredList.push(property);
-//             console.log(filteredList);
-//
-//         }
-//     });
-//     const stringifiesFilteredList = JSON.stringify(filteredList); //Only strings can be stored in localstorage
-//     localStorage.setItem('filteredList', stringifiesFilteredList);    //storing the stringifies objects into the localstorage
-//     window.open('result.html');
-// }
-
-/* <<<--------------------------- Result Page --------------------------->>> */
-
-// const filteredListBack = JSON.parse(localStorage.getItem('filteredList'));   //read back the object from localstorage
-
-// $.each(filteredListBack, function (index, property) {    // Loop through the array of filtered listings using the jQuery each() function
-//
-//     // Create a new property ad element using template literals and the current property object
-//     const $propertyAd = $(`
-//                 <div class="propAdBox">
-//   <img class="propMainImg" src="${property.picture1}" alt="${property.type}"/>
-//   <div>
-//     <h2 class="property-title">${property.title}</h2>
-//     <h4>${property.bedrooms} Bedrooms</h4>
-//     <h5>${property.postcode}</h5>
-//     <p>${property.shortDescription}</p>
-//     <h3>${property.price}</h3>
-//     <p class="seeMore">see more...</p>
-//     <button class="favourite-button">Add to Favourites</button>
-//   </div>
-// </div>
-//
-//   `);
-//     $('#filtered-properties-container').append($propertyAd);    // Append the property ad element to the page
-//
-//     $propertyAd.find('.seeMore').click(function () {
-//         const stringifiesObject = JSON.stringify(property); //Only strings can be stored in localstorage
-//         localStorage.setItem('property', stringifiesObject);    //storing the stringifies objects into the localstorage
-//         window.open('property.html');
-//     });
-// });
-
-// let favouriteList = []; // Declare an empty array to store favourite items
-
-$(function () {
-    // $('.property-title').draggable({ // Make elements with class "drag" draggable
-    //     revert: true // When the draggable element is dropped, it will return to its original position
-    // });
-
-    // $("#favourite-items-container").droppable({ // Make element with id "drpToMe" a droppable target
-    //     drop: function(event, ui) { // When a draggable element is dropped on the droppable element
-    //         const content = ui.draggable.text(); // Get the text of the dropped element
-    //         //$(this).addClass("ui-state-highlight"); // Add the class "ui-state-highlight" to the droppable element
-    //         addPropertyToFavourites(content); // Call the function "addPropertyToFavourites" with the text of the dropped element as an argument
-    //     }
-    // });
-
-    // $('.favourite-button').click(function() { // When an element with class "favourite-button" is clicked
-    //     const propertyTitle = $(this).parent().find('.property-title').text(); // Get the text of the first h2 element within the parent element of the clicked element
-    //     addPropertyToFavourites(propertyTitle); // Call the function "addPropertyToFavourites" with the property title as an argument
-    // });
-
-    // function addPropertyToFavourites(propertyTitle) {
-    //     const favProperty = propertyData.property.find(element => element.title === propertyTitle);
-    //     if (!favouriteList.includes(favProperty)) {
-    //         favouriteList.push(favProperty);
-    //         addPropertyToList(favProperty);
-    //     }
-    // }
-
-  //   function addPropertyToList(favProperty) {
-  //       // Create a new element to be appended to the element with id "droppedList"
-  //       const $favAdded = $(`
-  //   <div class="favItemBox">
-  //   <div>
-  //     <h5 class="dragFavRemove">${favProperty.title}</h5>
-  //     <h4>£ ${favProperty.price}</h4>
-  //     </div>
-  //     <i class="fas fa-times delete-icon fa-xl"></i>
-  //   </div>
-  // `);
-  //       $('#favourite-items').append($favAdded); // Append the newly created element to the element with id "droppedList"
-  //   }
-
-    // <<<------------ Delete by icon begins ------------>>>
-
-// Add a click listener to the element with the id "droppedList"
-//     $('#favourite-items').on('click', '.delete-icon', function() {  // When the delete icon is clicked, find the text of the h5 element that is a sibling of the clicked element
-//         const propertyTitle = $(this).parent().find('h5').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
-//         removePropertyFromFavourites(propertyTitle, this);
-//     });
-
-    // function removePropertyFromFavourites(propertyTitle, clickedElement) {  // Find the index of the element in the favouriteList array that has a title property that matches the propertyTitle argument
-    //     const index = favouriteList.findIndex(element => element.title === propertyTitle);  // If the index is not equal to -1 (i.e. the element was found in the array)
-    //     if (index !== -1) { // Remove the element from the favouriteList array
-    //         favouriteList.splice(index, 1); // Remove the clicked element's parent element from the DOM
-    //         $(clickedElement).parent().remove();
-    //     }
-    // }
-    // <<<------------ Delete by icon ends ------------>>>
-
-    // $('#clear-button').click(function() {
-    //     clearFavourites();
-    // });
-    //
-    // function clearFavourites() {
-    //     favouriteList.splice(0, favouriteList.length);  // Clear the favouriteList array
-    //     $('#favourite-items').empty(); // Remove all elements from the element with id "droppedList"
-    // }
-
-    // Add a click listener to the element with the id "droppedList"
-    // $('#favourite-items').on('click', '.favItemBox', function() {
-    //     $(this).draggable({ // Make the clicked element draggable
-    //         revert: true // When the draggable element is dropped, it will return to its original position
-    //     });
-    // });
-
-    // $('#filtered-properties-container').droppable({
-    //     drop: function(event, ui) {
-    //         const propertyTitle = ui.draggable.find('h5').text();
-    //         const clickedElement = ui.helper.clone().replaceAll(ui.draggable);
-    //         removePropertyFromFavourites(propertyTitle, clickedElement);
-    //     }
-    // });
-
-
-    // //<<<----------- Save favourite to the properties and read it back ----------->>>
-    //
-    // let favouriteList = JSON.parse(localStorage.getItem("favouriteList")) || [];    // Retrieve the favouriteList array from local storage when the page is loaded
-    // favouriteList.forEach(addPropertyToList);   // Iterate over the elements in the array and add them to the list
-    // window.addEventListener("beforeunload", function(event) {   // Save the favouriteList array to local storage when the page is unloaded
-    //     localStorage.setItem("favouriteList", JSON.stringify(favouriteList));
-    // });
-
-});
-
-
-/* <<<--------------------------- Property Page --------------------------->>> */
-// $(function () {
-//     $("#propInfoTabs").tabs();
-// });
-
-// const backToProperty = JSON.parse(localStorage.getItem('property'));   //read back the object from localstorage
-// propertyPage(backToProperty);
-
-// function propertyPage(selectedProperty) {
-//
-//
-//     // $('#add-to-favourite').click(function(){
-//     //     favouriteList.push(selectedProperty);
-//     //     console.log(favouriteList);
-//     // });
-//     //
-//     // $('.propImg1').append(`<img class="property-image" src="${selectedProperty.picture1}" alt="">`);
-//     // $('.propImg2').append(`<img class="property-image" src="${selectedProperty.picture2}" alt="">`);
-//     // $('.propImg3').append(`<img class="property-image" src="${selectedProperty.picture3}" alt="">`);
-//     // $('.propImg4').append(`<img class="property-image" src="${selectedProperty.picture4}" alt="">`);
-//     // $('.propImg5').append(`<img class="property-image" src="${selectedProperty.picture5}" alt="">`);
-//     // $('.propImg6').append(`<img class="property-image" src="${selectedProperty.picture6}" alt="">`);
-//     //
-//     // $('.propPic1').append(`<img class="propImageSelector" src="${selectedProperty.picture1}" onclick="currentSlide(1)" alt="">`);
-//     // $('.propPic2').append(`<img class="propImageSelector" src="${selectedProperty.picture2}" onclick="currentSlide(2)" alt="">`);
-//     // $('.propPic3').append(`<img class="propImageSelector" src="${selectedProperty.picture3}" onclick="currentSlide(3)" alt="">`);
-//     // $('.propPic4').append(`<img class="propImageSelector" src="${selectedProperty.picture4}" onclick="currentSlide(4)" alt="">`);
-//     // $('.propPic5').append(`<img class="propImageSelector" src="${selectedProperty.picture5}" onclick="currentSlide(5)" alt="">`);
-//     // $('.propPic6').append(`<img class="propImageSelector" src="${selectedProperty.picture6}" onclick="currentSlide(6)" alt="">`);
-//     //
-//     // $(`.title-fullPage`).append(selectedProperty.title);
-//     // $(`.postcode-fullPage`).append(selectedProperty.postcode);
-//     // $(`.date-fullPage`).append(selectedProperty.added.year + "/" +  selectedProperty.added.month + "/" + selectedProperty.added.day);
-//     // $(`.type-fullPage`).append(selectedProperty.type);
-//     // $(`.bedrooms-fullPage`).append(selectedProperty.bedrooms);
-//     // $(`.tenure-fullPage`).append(selectedProperty.tenure);
-//     // $(`.price-fullPage`).append(selectedProperty.price);
-//     //
-//     // $(`.propDetails`).append(selectedProperty.description);
-//     // $(`.propFloorPlan`).append(`<img src="${selectedProperty.floorPlan}" alt="" style="width: 100%">`);
-//     // $(`.propLocation`).append(`<iframe src="${selectedProperty.location}"></iframe>`);
-//
-// }
-
-// <-------- SlideShow begins ------->
+// <-------- Image gallery slideshow function ------->
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -765,10 +498,8 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    //let i;
     let slides = $(".propLargeImage");
     let dots = $(".propImageSelector");
-    //let captionText = $("#caption");
     if (n > slides.length) {
         slideIndex = 1
     }
@@ -779,11 +510,4 @@ function showSlides(n) {
     dots.removeClass("active");
     $(slides[slideIndex - 1]).css("display", "block");
     $(dots[slideIndex - 1]).addClass("active");
-    //captionText.html(dots[slideIndex-1].alt);
 }
-
-// <-------- SlideShow ends ------->
-
-
-
-
