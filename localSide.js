@@ -26,7 +26,7 @@ var propertyData = {
             "floorPlan": "./images/prop1/prop1FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/85857954#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 9,
                 "day": 14,
                 "year": 2021
             }
@@ -55,7 +55,7 @@ var propertyData = {
             "floorPlan": "./images/prop2/prop2FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/129315881#/?channel=RES_BUY",
             "added": {
-                "month": "November",
+                "month": 11,
                 "day": 22,
                 "year": 2022
             }
@@ -86,7 +86,7 @@ var propertyData = {
             "floorPlan": "./images/prop3/prop3FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/125652572#/?channel=RES_BUY",
             "added": {
-                "month": "August",
+                "month": 4,
                 "day": 3,
                 "year": 2022
             }
@@ -118,9 +118,9 @@ var propertyData = {
             "floorPlan": "./images/prop4/prop4FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/129008039#/?channel=RES_BUY",
             "added": {
-                "month": "November",
+                "month": 4,
                 "day": 11,
-                "year": 2022
+                "year": 2021
             }
         },
         {
@@ -148,7 +148,7 @@ var propertyData = {
             "floorPlan": "./images/prop5/prop5FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/126646838#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 1,
                 "day": 2,
                 "year": 2022
             }
@@ -177,9 +177,9 @@ var propertyData = {
             "floorPlan": "./images/prop5/prop6FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/126802958#/?channel=RES_BUY",
             "added": {
-                "month": "October",
+                "month": 10,
                 "day": 20,
-                "year": 2022
+                "year": 2021
             }
         },
         {
@@ -206,7 +206,7 @@ var propertyData = {
             "floorPlan": "./images/prop7/prop7FloorPlan.jpeg",
             "url": "https://www.rightmove.co.uk/properties/127135595#/?channel=RES_BUY",
             "added": {
-                "month": "September",
+                "month": 9,
                 "day": 2,
                 "year": 2022
             }
@@ -231,6 +231,7 @@ $(document).ready(function(){
     /* <<<--------------------------- Search Page --------------------------->>> */
     $( "#propertyType" ).selectmenu();
     $( "#dateAdded" ).selectmenu();
+    $( "#accordion" ).accordion();
 
 
     $("#slider").slider({
@@ -272,31 +273,74 @@ $(document).ready(function(){
         console.log(values[1]);  // end value of the range
 
         const type = $('#propertyType').val();
-        const minPrice = values[0];
-        const maxPrice = values[1];
+        const postcode = $('#postCode').val();
         const minBedrooms = $('#minBedrooms').val();
         const maxBedrooms = $('#maxBedrooms').val();
-        const postcode = $('#postCode').val();
+        const minPrice = values[0];
+        const maxPrice = values[1];
+        const freehold = $('#Freehold-checkbox').is(':checked');
+        const leasehold = $('#Leasehold-checkbox').is(':checked');
+        let tenureFH;
+        let tenureLH;
+        if (freehold === true){
+            tenureFH = "Freehold"
+        }
+        if (leasehold === true){
+            tenureLH = "Leasehold"
+        }
 
+
+        const dateAdded = $('#dateAdded').val();
+
+
+
+
+
+        // $.each(propertyData.property, function (index, property) {  //iterate through the array and find matching properties
+        //     if ((type === 'Any' || property.type === type) &&
+        //          (minPrice === '' || property.price >= minPrice) &&
+        //         (maxPrice === '' || property.price <= maxPrice) &&
+        //         (minBedrooms === '' || property.bedrooms >= minBedrooms) &&
+        //         (maxBedrooms === '' || property.bedrooms <= maxBedrooms) &&
+        //         (postcode === 'Any' ||postcode === '' || property.postcode === postcode)) {
+        //         filteredList.push(property);    // If the element meets the search criteria, add it to the filteredList array
+        //     }
+        // });
         $.each(propertyData.property, function (index, property) {  //iterate through the array and find matching properties
-            if ((type === 'Any' || property.type === type) && (minPrice === '' || property.price >= minPrice) &&
-                (maxPrice === '' || property.price <= maxPrice) && (minBedrooms === '' || property.bedrooms >= minBedrooms) &&
-                (maxBedrooms === '' || property.bedrooms <= maxBedrooms) && (postcode === '' || property.postcode === postcode)) {
+
+
+            if ((type === 'Any' || property.type === type) &&
+                (postcode === 'Any' || postcode === '' || property.postcode === postcode) &&
+                (minBedrooms === '' || minBedrooms === 'No Min' || property.bedrooms >= minBedrooms) &&
+                (maxBedrooms === '' || maxBedrooms === 'No Max' || property.bedrooms <= maxBedrooms) &&
+                (minPrice === '' || property.price >= minPrice) &&
+                (maxPrice === '' || property.price <= maxPrice) &&
+                (tenureLH === undefined && tenureFH === undefined || tenureLH === property.tenure || tenureFH === property.tenure) &&
+                (dateAdded === 'Any' || dateAdded === 'This Year' && property.added.year === 2022 ||
+                    dateAdded === 'This Month' && property.added.month === 1 ||
+                    dateAdded === 'Last 6 Months' && property.added.year === 2022 &&  (property.added.month >= 6 && property.added.month <= 12))) {
                 filteredList.push(property);    // If the element meets the search criteria, add it to the filteredList array
+
+
+                console.log("date " + dateAdded);
+
             }
         });
+
         localStorage.setItem('filteredList', JSON.stringify(filteredList));    //storing the stringifies objects into the localstorage
         window.open('result.html');
     });
 
-    $('#view-favorites-button').click(function () {
+    // $('#view-favorites-button').click(function () {
         $.each(favouriteList, function (index, property) {
             createPropertyAdd(index,property,'#view-favorites-area');
         })
-    })
+    // })
 
 
-        $.each(favouriteList, function (index, property) {
+
+
+    $.each(favouriteList, function (index, property) {
             createPropertyAdd(index,property,'#fav-page-content');
         })
 
@@ -323,9 +367,12 @@ $(document).ready(function(){
                     <h4>${property.tenure}</h4>
                     <h4>${property.bedrooms} &nbsp;<i class="fa-solid fa-bed"></i></h4>
                     <p class="p-details" style="font-size: 13px; width: 97%; height: 40%; margin-top: 5px">${property.shortDescription}<span class="seeMore" style="color: #0081ff; font-size: 16px"> see more...</span></p>
-                    <div style="display: flex; justify-content: space-between; width: 97%;">
-                        <h3 style="color: #04AA6D; font-size: x-large">£ ${formattedPrice}</h3>
+                    <div style="display: flex; width: 97%;">
+                        <h3 style="color: #04AA6D; font-size: x-large; margin-right: 33%">£ ${formattedPrice}</h3>
+                    
+                        <button class="remove-button"><i class="fa-regular fa-trash-can fa-xl"></i></button>
                         <button class="favourite-button">Add to Favourites</button>
+                        
                     </div>
                 </div>
             </div>
@@ -377,6 +424,7 @@ $(document).ready(function(){
                     <i class="fas fa-times delete-icon fa-xl"></i>
                 </div>
   `);
+
         $('#favourite-items').append($favAdded); // Append the newly created element to the element with id "droppedList"
         $('#favorites-list').append($favAdded); // Append the newly created element to the element with id "favorites-list"
     }
@@ -388,12 +436,18 @@ $(document).ready(function(){
         removePropertyFromFavourites(propertyTitle, this);
     });
 
+    $('#filtered-properties-container').on('click', '.remove-button', function() {
+        const propertyTitle = $(this).parent().parent().find('.property-title').text();   // Call the removePropertyFromFavourites function and pass it the propertyTitle and the clicked element
+        removePropertyFromFavourites(propertyTitle, '#favourite-items > .delete-icon');
+    });
+
     function removePropertyFromFavourites(propertyTitle, clickedElement) {
         const index = favouriteList.findIndex(element => element.title === propertyTitle);
         if (index !== -1) {
             favouriteList.splice(index, 1);
             $(clickedElement).parent().remove();
             localStorage.setItem("favouriteList", JSON.stringify(favouriteList))
+            window.location.reload();
         }
     }
 

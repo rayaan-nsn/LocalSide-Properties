@@ -1,206 +1,31 @@
-houses :
-
-prop1
-https://www.rightmove.co.uk/properties/85857954#/?channel=RES_BUY
-
-prop2
-https://www.rightmove.co.uk/properties/129315881#/?channel=RES_BUY
-
-prop3
-https://www.rightmove.co.uk/properties/125652572#/?channel=RES_BUY
-
-prop4
-https://www.rightmove.co.uk/properties/129008039#/?channel=RES_BUY
-
-
-Apartments / Flat :
-
-prop5
-https://www.rightmove.co.uk/properties/126646838#/?channel=RES_BUY
-
-prop6
-https://www.rightmove.co.uk/properties/126802958#/?channel=RES_BUY
-
-prop7
-https://www.rightmove.co.uk/properties/127135595#/?channel=RES_BUY
-
-
-                  <h1>${property.title}</h1>
-                  <div class="container">
-                        <div class="mySlides"><img src="${property.picture1}" style="width:100%" alt=""></div>
-                        <div class="mySlides"><img src="${property.picture2}" style="width:100%" alt=""></div>
-                        <div class="mySlides"><img src="${property.picture3}" style="width:100%" alt=""></div>
-                        <div class="mySlides"><img src="${property.picture4}" style="width:100%" alt=""></div>
-                        <div class="mySlides"><img src="${property.picture5}" style="width:100%" alt=""></div>
-                        <div class="mySlides"><img src="${property.picture6}" style="width:100%" alt=""></div>
-                        <div class="row">
-                            <div class="column"><img class="demo" src="${property.picture1}" onclick="currentSlide(1)" alt=""></div>
-                            <div class="column"><img class="demo" src="${property.picture2}" onclick="currentSlide(2)" alt=""></div>
-                            <div class="column"><img class="demo" src="${property.picture3}" onclick="currentSlide(3)" alt=""></div>
-                            <div class="column"><img class="demo" src="${property.picture4}" onclick="currentSlide(4)" alt=""></div>
-                            <div class="column"><img class="demo" src="${property.picture5}" onclick="currentSlide(5)" alt=""></div>
-                            <div class="column"><img class="demo" src="${property.picture6}" onclick="currentSlide(6)" alt=""></div>
-                        </div>
-                    </div>
-
-
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital@1&display=swap');
-*{
-    margin: 0;
-    font-family: 'Sofia Sans Semi Condensed', sans-serif;
-}
-
-
-/*Sidenav begins*/
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-/*Sidenav ends*/
-
-
-
-.propAdBox{
-    display: flex; /* Image & text side by side */
-    background-color: #ef5f4f;
-    margin: 2.5%;
-    width: 95%;
-    border-radius: 10px;
-}
-
-.ad-content > h1{
-    margin-top: 20px;
-    font-size: x-large;
-}
-
-.ad-content > h2{
-    font-size: medium;
-
-}
-
-
-.favItemBox{
-    display: flex;
-    border: 1px solid black;
-}
-
-.propMainImg{
-    margin: 10px 25px 10px 10px;
-    height: 200px;
-}
-
-/*Gallery Slideshow begins*/
-.propImageContainer{
-    width: 50%;
-    margin-left: 100px;
-}
-
-.propLargeImage{
-    width: 100%;
-}
-
-.propSmallImage {   /* Six columns side by side */
-    float: left;
-    width: 16.66%;
-}
-.column1{
-    float: left;
-    background-color:#aaa;
-    width: 70%;
-    height: 650px;
-    /*overflow-x: hidden;*/
-    /*overflow-y: auto;*/
-    margin: 1.5%;
-    border-radius: 10px;
-}
-
-.column1>h2{
-    position: fixed;
-}
-
-.column2{
-    float: left;
-    background-color:#bbb;
-    width: 24%;
-    height: 650px;
-    margin: 1.5%;
-    border-radius: 10px;
-
-}
-
-#filtered-properties-container{
-
-}
-
-.propSmallImageRow {
-    width: 100%;
-    position: relative;
-
-}
-#propInfoTabs {
-    float: left;
-    margin-top: 200px;
-    width: 100%;
-    position: absolute;
-}
-
-
-.propImageSelector { /* Add a transparency effect for thumbnail images */
-    opacity: 0.6;
-    width: 100%;
-}
-
-.active,
-.propImageSelector:hover {
-    opacity: 1;
-}
-/*Gallery Slideshow begins*/
-
-iframe{
-    width: 600px;
-    height: 450px;
-    border:0;
-    allowfullscreen:"";
-    loading:lazy;
-    referrerpolicy: no-referrer-when-downgrade;
-}
-
+var propertyData = {
+    "property": [
+        {
+            "id": "prop1",
+            "type": "House",
+            "title": "Woronzow Road, St Johns Wood, London, NW8",
+            "bedrooms": 5,
+            "postcode": "NW1",
+            "price": 17000000,
+            "tenure": "Freehold",
+            "added": {
+                "month": 9,
+                "day": 14,
+                "year": 2021
+            }
+        },
+        {
+            "id": "prop2",
+            "type": "House",
+            "title": "Hamilton Terrace, London, NW8",
+            "bedrooms": 10,
+            "postcode": "NW1",
+            "price": 15000000,
+            "tenure": "Freehold",
+            "added": {
+                "month": 11,
+                "day": 22,
+                "year": 2022
+            }
+        }
+    ]};

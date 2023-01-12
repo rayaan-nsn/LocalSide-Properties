@@ -24,75 +24,84 @@
     <a href="./favourites.html">Favourites &nbsp;&nbsp; <i class="fa-regular fa-heart"></i></a>
 </nav>
 
+
+
 <!--<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>-->
 <div class="row">
-    <div class="column1">
-        <form id="form">
-            <fieldset style="border: none; width: 65%; display: block; margin: auto; padding: 3%">
-                <h1 style="display: block; margin: auto">Find Your Dream Property</h1><br><br>
-                <div class="search-row1">
-                    <div>
-                        <label for="propertyType">Property Type</label><br/>
-                        <select name="propertyType" id="propertyType">
-                            <option selected="selected">Any</option>
-                            <option>House</option>
-                            <option>Apartment</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="postCode">Postal Code</label><br>
-                        <input type="text" id="postCode" name="postCode" value="NW1" style="height: 29px; width: 255px">
-                    </div>
-                </div>
-                <br><br>
-
-                <div class="search-row2">
-                    <div>
-                        <label for="minBedrooms">Minimum Bedrooms</label><br>
-                        <input type="text" id="minBedrooms" name="minBedrooms" value="No Min" >
-                    </div>
-                    <div>
-                        <label for="maxBedrooms">Maximum Bedrooms:</label><br>
-                        <input type="text" id="maxBedrooms" name="maxBedrooms" value="No Max" ">
-                    </div>
-                </div>
-                <br><br>
-
-                <div id="slider"></div>
-                <br>
-                <p> Price Range: <span id="range"></span></p>
-                <br><br>
-
-                <div class="search-row1">
-                    <fieldset style="width: 200px; border: none; display: flex; justify-content: space-between; padding: 0; ">
-                        <legend style="margin-bottom: 10px">Hotel Ratings</legend>
-                        <div>
-                        <label for="Freehold-checkbox" style="font-size: larger;">Freehold </label>
-                        <input type="checkbox" name="Freehold-checkbox" id="Freehold-checkbox" >
+    <div class="column1" style="margin-top: 87px">
+        <div id="accordion">
+            <h3>Search</h3>
+            <div>
+                <form id="form">
+                    <fieldset style="border: none; width: 75%; display: block; margin: auto; padding: 3% 3% 2.5%;">
+<!--                        <h1 style="display: block; margin: auto">Find Your Dream Property</h1><br><br>-->
+                        <div class="search-row1">
+                            <div>
+                                <label for="propertyType">Property Type</label><br/>
+                                <select name="propertyType" id="propertyType">
+                                    <option selected="selected">Any</option>
+                                    <option>House</option>
+                                    <option>Apartment</option>
+                                </select>
+                            </div><br><br>
+                            <div>
+                                <label for="postCode">Postal Code</label><br>
+                                <input type="text" id="postCode" name="postCode" value="Any" style="height: 29px; width: 255px">
+                            </div>
                         </div>
-                <div>
-                        <label for="Leasehold-checkbox" style="font-size: larger;">Leasehold </label>
-                        <input type="checkbox" name="Leasehold-checkbox" id="Leasehold-checkbox">
-                </div>
-                    </fieldset>
+                        <br><br>
 
-                    <div>
-                        <label for="dateAdded">Date Added</label><br/>
-                        <select name="dateAdded" id="dateAdded">
-                            <option selected="selected">Any</option>
-                            <option>Today</option>
-                            <option>Last 3 Days</option>
-                            <option>This Week</option>
-                            <option>This Month</option>
-                            <option>This Year</option>
-                        </select>
-                    </div>
-                </div><br><br><br>
-                <input type="submit" id="submitBtn" value="Find Properties "/>
-            </fieldset>
-            <input type="button" id="view-favorites-button" value="view fav "/>
-            <div id="view-favorites-area"></div>
-        </form>
+                        <div class="search-row2">
+                            <div>
+                                <label for="minBedrooms">Minimum Bedrooms</label><br>
+                                <input type="text" id="minBedrooms" name="minBedrooms" value="No Min" >
+                            </div><br><br>
+                            <div>
+                                <label for="maxBedrooms">Maximum Bedrooms:</label><br>
+                                <input type="text" id="maxBedrooms" name="maxBedrooms" value="No Max">
+                            </div>
+                        </div>
+                        <br><br>
+
+                        <div id="slider"></div>
+                        <br>
+                        <p> Price Range: <span id="range"></span></p>
+                        <br><br>
+
+                        <div class="search-row1">
+                            <fieldset style="width: 200px; border: none; display: flex; justify-content: space-between; padding: 0; ">
+                                <legend style="margin-bottom: 10px">Hotel Ratings</legend>
+                                <div>
+                                    <label for="Freehold-checkbox" style="font-size: larger;">Freehold </label>
+                                    <input type="checkbox" name="Freehold-checkbox" id="Freehold-checkbox" >
+                                </div>
+                                <div>
+                                    <label for="Leasehold-checkbox" style="font-size: larger;">Leasehold </label>
+                                    <input type="checkbox" name="Leasehold-checkbox" id="Leasehold-checkbox">
+                                </div>
+                            </fieldset><br><br>
+
+                            <div>
+                                <label for="dateAdded">Date Added</label><br/>
+                                <select name="dateAdded" id="dateAdded">
+                                    <option selected="selected">Any</option>
+                                    <option>This Month</option>
+                                    <option>Last 6 Months</option>
+                                    <option>This Year</option>
+                                </select>
+                            </div>
+                        </div><br><br><br>
+                        <input type="submit" id="submitBtn" value="Find Properties "/>
+                    </fieldset>
+<!--                    <div id="view-favorites-area"></div>-->
+                </form>
+            </div>
+            <h3>Favourites</h3>
+            <div>
+                <div id="view-favorites-area"></div>
+            </div>
+        </div>
+
     </div>
     <div id="droppable remove-area" class="column2">
         <h2>FAVOURITES</h2>
@@ -103,6 +112,7 @@
         <button id="clear-button">Clear All &nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
     </div>
 </div>
+
 
 
 </body>
