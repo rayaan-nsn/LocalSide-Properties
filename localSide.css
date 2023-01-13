@@ -20,7 +20,8 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: medium;
+    transition: 0.5s;
 }
 
 /* Change the color of links on hover */
@@ -58,6 +59,15 @@ fieldset > h1{
     margin: auto;
     width: 200px;
     height: 50px;
+    border: 2px solid #04AA6D;
+    background-color: white;
+    color: #04AA6D;
+    transition: 0.5s;
+}
+
+#submitBtn:hover{
+    background-color: #04AA6D;
+    color: white;
 }
 
 
@@ -90,6 +100,14 @@ fieldset > h1{
 .homeBox > button{
     width: 50%;
     height: 20%;
+    border: none;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.homeBox > button:hover{
+    background-color: #04AA6D;
+    color: white;
 }
 
 .propAdBox{
@@ -121,12 +139,12 @@ fieldset > h1{
     width: 150px;
     background-color: white;
     color: #04AA6D;
+    transition: 0.5s;
 }
 
 .favourite-button:hover{
     background-color: #04AA6D;
     color: white;
-    border: 2px solid white;
 }
 
 .favItemBox{
@@ -137,6 +155,7 @@ fieldset > h1{
     border: 1px solid black;
     padding: 10px;
     justify-content: space-between;
+    text-align: left;
 }
 
 .dragFavRemove{
@@ -158,6 +177,15 @@ fieldset > h1{
     bottom: 10px;
     left: 0;
     right: 0;
+    border: 2px solid red;
+    color: red;
+    background-color: white;
+    transition: 0.5s;
+}
+
+#clear-button:hover{
+    background-color: red;
+    color: white;
 }
 
 .column1{
@@ -192,7 +220,7 @@ fieldset > h1{
 }
 
 #favourite-items-container {
-    height: 450px;
+    height: 480px;
     overflow-x: hidden;
     overflow-y: scroll;
 
@@ -225,6 +253,24 @@ fieldset > h1{
     width: 16.66%;
 }
 
+.p-details{
+    font-size: 13px;
+    width: 97%;
+    height: 40%;
+    margin-top: 5px;
+}
+
+.fPrice {
+    color: #04AA6D;
+    font-size: x-large;
+    margin-right: 33%
+}
+
+.priceNFavDelBtn{
+    display: flex;
+    width: 97%;
+}
+
 .propSmallImageRow {
     width: 95%;
     position: relative;
@@ -239,14 +285,10 @@ fieldset > h1{
 .propImageSelector:hover {
     opacity: 1;
 }
-/*Gallery Slideshow begins*/
-
-
 
 #property-details-container{
     width: 60%;
     padding: 2% 2% 2% 0;
-
 }
 
 .typeNTenure-container{
@@ -277,6 +319,7 @@ fieldset > h1{
     border: 2px solid #04AA6D;
     color: #04AA6D;
     background-color: white;
+    transition: 0.5s;
 }
 
 .add-to-favourite:hover{
@@ -296,7 +339,7 @@ fieldset > h1{
 }
 
 ul{
-position: fixed;
+    position: absolute;
     width: 48%;
 }
 
@@ -326,68 +369,137 @@ iframe{
     flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 768px) {
-    /* styles for small screens go here */
-    body {
-    }
 
+
+/* <<<-------------------------- Media Queries ----------------------->>> */
+
+@media only screen and (max-width: 1260px) and (min-width: 768px){
+    .fPrice{
+        margin-right: 25%;
+    }
+    .favourite-button{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 1090px) and (min-width: 768px){
+    .fPrice{
+        margin-right: 0;
+    }
+    .priceNFavDelBtn{
+        display: inherit;
+        margin-bottom: 10px;
+    }
+    .p-details{
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .topnav{
         position: inherit;
     }
-
     .column1{
         width: 100%;
     }
-
+    .favItemBox{
+        height: auto;
+    }
+    #accordion{
+        display: block;
+        margin: auto;
+    }
     .column2{
         position: inherit;
         order: -1;
         width: 100%;
         height: 300px;
     }
-
     #favourite-items-container{
         height: 75%;
     }
-
     #remove-area{
-        display: inline-block;
+        /*display: inline-block;*/
         overflow-x: hidden;
         overflow-y: scroll;
         position: absolute;
     }
-
+    fieldset {
+        text-align: center;
+        align-content: center;
+    }
     .homeBox {
         width: 90%;
     }
-
     .search-row1, .search-row2, .search-row1{
         display: inherit;
     }
-
     #favourite-items-container{
         overflow-scrolling: auto;
     }
-
+    .priceNFavDelBtn{
+        margin-bottom: 10px;
+    }
     .propAdBox{
         display: inherit;
+        padding-bottom: 10px;
     }
-
     #clear-button{
         display: inherit;
         margin: auto;
         height: 35px;
         width: 120px;
         position: inherit;
-
     }
     .property-top-details{
         display: inherit;
     }
     #property-details-container{
-        width: 100%;
+        width: 93%;
+        display: block;
+        margin: auto;
     }
     #propInfoTabs{
-        width: 100%;
+        width: 95%;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    .propImageContainer{
+        display: block;
+        margin: auto;
+        width: 95%;
+    }
+    .propAdBox > div{
+        display: block;
+        margin: auto;
+    }
+    ul{
+        width: 98%;
     }
 }
+
+@media only screen and (max-width: 562px){
+    .fPrice{
+        margin-right: 35px;
+    }
+    .favourite-button{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .priceNFavDelBtn{
+        display: inherit;
+        margin-bottom: 10px;
+    }
+    .propMainImg{
+        max-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 280px){
+    .propMainImg{
+        max-width: 200px;
+    }
+}
+

@@ -5,7 +5,7 @@ var propertyData = {
             "type": "House",
             "title": "Woronzow Road, St Johns Wood, London, NW8",
             "bedrooms": 5,
-            "postcode": "NW1",
+            "postcode": "NW8",
             "price": 17000000,
             "tenure": "Freehold",
             "shortDescription": "This 1860s villa in St John's Wood, London has a large entertaining space, principal suite with en suite bathroom, and four additional bedrooms. It also has a secluded garden with swimming pool and pool house, off-street parking, and the potential for extension. Located near St John's Wood High Street and underground station",
@@ -34,11 +34,11 @@ var propertyData = {
         {
             "id": "prop2",
             "type": "House",
-            "title": "Hamilton Terrace, London, NW8",
+            "title": "Hamilton Terrace, London, NW1",
             "bedrooms": 10,
             "postcode": "NW1",
             "price": 15000000,
-            "tenure": "Freehold",
+            "tenure": "Leasehold",
             "shortDescription" : "Substantial 1830s detached house in affluent St. John's Wood, with planning permission for 12,500 sq ft single family residence with extensive leisure and pool. Close to transport, near St. John's Wood and Maida Vale Underground Stations and easy access to amenities and prime locations in London. Complete architect pack available on request",
             "description": "A substantial double fronted detached house, built in circa 1830, currently arranged as six apartments, with off street parking and a 150 ft West facing garden. The property has planning permission to create a sensational single family residence of circa 12,500 square feet with extensive leisure and a swimming pool.\n" + "\n" +
                 "Complete architect pack available on request\n" + "\n" + "Hamilton Terrace is located on the West side of St. John's Wood, an area renowned as one of the most affluent parts of London, being characterised by prime residential properties, boutique shops and restaurants. Hamilton Terrace is one of the highest value roads in St. John's Wood. The house is 450 metres to the southwest of St John's Wood Underground Station, which provides Jubilee line services to the West End, Bond Street (5 minutes), London Bridge (14 minutes), and Canary Wharf (20 minutes).\n" + "\n" +
@@ -62,8 +62,8 @@ var propertyData = {
         },
         {
             "id": "prop3",
-            "type": "Condo",
-            "title": "Ingram Avenue, Hampstead Garden, London, NW11",
+            "type": "House",
+            "title": "Ingram Avenue, Hampstead Garden, London, NW1",
             "bedrooms": 9,
             "postcode": "NW1",
             "price": 12500000,
@@ -94,9 +94,9 @@ var propertyData = {
         {
             "id": "prop4",
             "type": "House",
-            "title": "North End Avenue, Hampstead, London, NW3",
-            "bedrooms": 5,
-            "postcode": "NW8",
+            "title": "North End Avenue, Hampstead, London, BR1",
+            "bedrooms": 6,
+            "postcode": "BR1",
             "price": 8450000,
             "tenure": "Freehold",
             "shortDescription" : "A substantial semi-detached period house abutting Hampstead Heath with driveway and large landscaped gardens, gym/bedroom, 6 bedrooms and 3 bathrooms, ideal location between Hampstead Village and Golders Green with excellent shopping and transport facilities",
@@ -156,9 +156,9 @@ var propertyData = {
         {
             "id": "prop6",
             "type": "Apartment",
-            "title": "Elsworthy Road, London, NW3",
+            "title": "Elsworthy Road, London, BR1",
             "bedrooms": 4,
-            "postcode": "NW1",
+            "postcode": "BR1",
             "price": 5750000,
             "tenure": "Freehold",
             "shortDescription" : "Exceptional four-bedroom duplex apartment in Arts & Crafts style building opposite Primrose Hill Park. Features air conditioning, underfloor heating, and full home automation. 3,185 sqft of living space includes a dual aspect living room, open plan kitchen, study, private gardens, and three en-suite bedrooms with private terrace for the principal bedroom",
@@ -187,9 +187,9 @@ var propertyData = {
             "type": "Apartment",
             "title": "Maresfield Gardens III, London NW3",
             "bedrooms": 3,
-            "postcode": "NW1",
+            "postcode": "NW3",
             "price": 5950000,
-            "tenure": "Freehold",
+            "tenure": "Leasehold",
             "shortDescription" : "Ground and lower-ground luxurious apartment with towering ceilings in a quiet residential area with private front garden and communal entrance. Features guest WC, formal reception, open-plan kitchen, dining, and living space with engineered oak flooring, underfloor heating and front garden views",
             "description": "The building is approached from Maresfield Gardens and is set far back from the quiet residential street, behind a front garden of Corten-framed beds and exquisite planting. Steps ascend to the raised ground foyer of the communal entrance.\n" + "\n" +
                 "The apartment unfurls over the ground and lower ground floors with soaring ceilings throughout. To right of the entrance is a guest WC and to the left of the hall lies a formal reception. A pair of full-height pivot doors open within a sublime hardwood bookcase to reveal a trio of high-reaching sash windows looking onto the front gardens.\n" + "\n" +
@@ -329,11 +329,11 @@ $(document).ready(function(){
                     <h5>${property.type} in ${property.postcode}</h5>
                     <h4>${property.tenure}</h4>
                     <h4>${property.bedrooms} &nbsp;<i class="fa-solid fa-bed"></i></h4>
-                    <p class="p-details" style="font-size: 13px; width: 97%; height: 40%; margin-top: 5px">${property.shortDescription}<span class="seeMore" style="color: #0081ff; font-size: 16px"> see more...</span></p>
-                    <div style="display: flex; width: 97%;">
-                        <h3 style="color: #04AA6D; font-size: x-large; margin-right: 33%">£ ${formattedPrice}</h3>
+                    <p class="p-details">${property.shortDescription}<span class="seeMore" style="color: #0081ff; font-size: 16px"> see more...</span></p>
+                    <div class="priceNFavDelBtn">
+                        <br><h3 class="fPrice">£ ${formattedPrice}</h3><br>
                         <button class="remove-button"><i class="fa-regular fa-trash-can fa-xl"></i></button>
-                        <button class="favourite-button">Add to Favourites</button> 
+                        <button class="favourite-button">Add to Favourites</button> <br>
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@ $(document).ready(function(){
         /* ---------- Onclick see more, save the selected property to the localstorage ---------- */
         $propertyAd.find('.seeMore,.p-details').click(function () {
             localStorage.setItem('property', JSON.stringify(property));    //storing the selected property objects into the localstorage
-            window.open('property.html');
+            window.location.href = 'property.html'
         });
     }
 
@@ -444,6 +444,13 @@ $(document).ready(function(){
     window.addEventListener("beforeunload", function(event) {
         localStorage.setItem("favouriteList", JSON.stringify(favouriteList));   // Save the favouriteList to local storage
     });
+
+
+    /* <<<--------------------------- Favourite Page --------------------------->>> */
+
+    $.each(favouriteList, function (index, property)
+        {createPropertyAdd(index, property, '#fav-page-content')}
+    );
 
 
     /* <<<--------------------------- Property Page --------------------------->>> */
